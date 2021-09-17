@@ -1,0 +1,69 @@
+.fill {
+	&__input {
+		color: $pinkishgrey;
+		font-size: 14px;
+		line-height: 20px;
+		height: 30px;
+		border: solid 1px $hospital-green;
+		margin: 7px 0 0;
+		padding: 3px 0px 7px 0px;
+	}
+	&__label {
+		margin: 20px 0 7px;
+		color: $dark_green_blue;
+		font-size: 14px;
+		line-height: 20px;
+		&--asterisk {
+			color: $orange;
+		}
+	}
+	&__data {
+		display: flex;
+		flex-direction: column;
+	}
+	&__photo {
+		display: flex;
+		flex-direction: column;
+		&--upload-btn {
+			border-radius: 6px;
+			color: $white-two;
+			font-family: $OpenSans;
+			width: 140px;
+			height: 30px;
+			font-size: 14px;
+			padding: 5px 20px;
+			line-height: 20px;
+			cursor: pointer;
+			margin-top: 10px;
+			background-color: $groot_green;
+			&:hover {
+				transform: scale(1.2);
+				background-color: $groot_brown;
+			}
+		}
+		&--hiddenField {
+			display: none;
+		}
+		&--preview {
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			width: 30px;
+			height: 30px;
+			border: solid 1px $hospital-green;
+			margin-left: 180px;
+			margin-top: -30px;
+		}
+	}
+	&__media {
+		display: flex;
+		flex-direction: column;
+		margin-top: -6px;
+	}
+}
+
+.profile__image,
+.profile__preview {
+	background-position: center;
+	background-size: cover;
+}

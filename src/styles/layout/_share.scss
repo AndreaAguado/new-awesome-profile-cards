@@ -1,0 +1,58 @@
+.share {
+  text-align: center;
+  &--button {
+    width: 220px;
+    height: 50px;
+    text-transform: uppercase;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 13px 18px 13px 17px;
+    margin: 30px 0px;
+    border-radius: 12px;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
+
+    &:hover {
+      transform: scale(1.05);
+      transition: 0.7s transform ease-in;
+    }
+
+    &__dis {
+      background-color: #d5d5d5;
+    }
+    @include tablet {
+      margin: 33px 0px 30px 0px;
+    }
+  }
+
+  .creada {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    border-top: #d8d8d8 solid 1px;
+    &--title {
+      font-size: 18px;
+      color: $gunmetal;
+      font-weight: 600;
+    }
+    &--p {
+      color: $orange;
+      font-size: 12px;
+      padding-bottom: 10px;
+      padding-top: 5px;
+      margin: 0px -10px;
+      font-weight: 600;
+    }
+    &--button {
+      // background-color: $azure;
+      color: white;
+      font-size: 14px;
+      width: 181px;
+      height: 30px;
+      margin: 10px 33px 30px 29px;
+      padding: 3px 9px 6px 10.5px;
+      border-radius: 3px;
+      box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
+    }
+  }
+}

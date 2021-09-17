@@ -1,0 +1,19 @@
+.header {
+  min-height: 111px;
+  width: 100%;
+  //height: 10vh; //-----------------------------------------------------------------------------pendiente
+  padding: 10px 79px 30px 40px;
+  display: flex;
+  justify-content: center;
+  background-color: $white-two;
+  margin: auto;
+  @media all and (min-width: 768px) {
+    padding: 10px 527px 30px 40px;
+    justify-content: flex-start;
+  }
+}
+.header__img {
+  width: 230px;
+  height: 100px;
+  animation: 2s 1 zaas; // para usar animación
+}

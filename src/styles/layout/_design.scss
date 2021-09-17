@@ -1,0 +1,85 @@
+.desing {
+  text-transform: uppercase;
+  &__title {
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
+  .title2 {
+    padding-bottom: 0px;
+  }
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  transition: height 0.6s ease; // transicion para el desplegable
+  overflow: hidden; // obligatorio para que haga bien rtansición
+  height: 115px; //obligatorio para que haga bien rtansición - se debe adaptar a cada sección
+
+  &__subtitle {
+    color: $gunmetal;
+    font-size: 14px;
+    font-weight: normal;
+    padding-left: 20px;
+  }
+  .radio {
+    display: flex;
+    flex-direction: column;
+    width: 120px;
+    row-gap: 20px;
+  }
+  .option {
+    display: flex;
+    flex-direction: row;
+  }
+  & input {
+    display: block;
+    transform: scale(1.2);
+    margin: 5px 10px;
+  }
+  .colors-container {
+    display: flex;
+    flex-direction: row;
+    padding-right: 20px;
+    @include tablet {
+      padding-right: 30px;
+    }
+    &__color {
+      width: 30px;
+      height: 25px;
+      display: block;
+    }
+  }
+}
+
+// Diferent colors
+.dark_green_blue {
+  background-color: $dark_green_blue;
+}
+.dirty_blue {
+  background-color: $dirty_blue;
+}
+.hospital_green {
+  background-color: $hospital_green;
+}
+
+.dried_blood {
+  background-color: $dried_blood;
+}
+.rusty_red {
+  background-color: $rusty_red;
+}
+.tomato {
+  background-color: $tomato;
+}
+.slate {
+  background-color: $slate;
+}
+.faded_orange {
+  background-color: $faded_orange;
+}
+.light_grey_blue {
+  background-color: $light_grey_blue;
+}
