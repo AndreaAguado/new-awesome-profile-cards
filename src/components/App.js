@@ -1,6 +1,5 @@
 import '../styles/App.scss';
 import logo from '../images/awesome-logo-card.png';
-// import logo2 from '../images/jessicawalsh.jpg';
 import logo3 from '../images/logo-adalab.png';
 
 function App() {
@@ -39,16 +38,8 @@ function App() {
                     alt='yourlogo'
                     title='yourlogo'
                     className='photo__example--logo profile__image js__profile-image'
-                    //style='background-image: url(./assets/images/jessicawalsh.jpg)'
                   ></div>
                 </div>
-
-                {/* <img
-                  src={logo2}
-                  className='photo__example'
-                  alt='yourlogo'
-                  title='yourlogo'
-                /> */}
 
                 <div className='link__section'>
                   <a
@@ -71,7 +62,7 @@ function App() {
 
                   <a
                     className='circle__awesome color_circle js_link_result'
-                    // href={'#'}
+                    href={'.'}
                     target='_blank'
                     rel='noreferrer'
                   >
@@ -80,7 +71,7 @@ function App() {
 
                   <a
                     className='circle__awesome color_circle js_link_result'
-                    // href={'#'}
+                    href={'.'}
                     target='_blank'
                     rel='noreferrer'
                   >
