@@ -1,9 +1,32 @@
 import '../styles/App.scss';
 import logo from '../images/awesome-logo-card.png';
 import logo3 from '../images/logo-adalab.png';
+import {useState} from 'react';
 
 function App() {
-  
+const [stateDesign, setStateDesign] = useState('hidden');
+const [stateFill, setStateFill] = useState('hidden');
+const [stateShare, setStateShare] = useState('hidden');
+
+const handleCollapsable = (ev) => {
+  const selected = ev.currentTarget;
+  console.log(selected);
+  if(selected.id === 'collapseDesign'){
+    setStateDesign('');
+    setStateFill('hidden');
+    setStateShare('hidden');
+  }
+  else if (selected.id === 'collapseFill') {
+    setStateDesign('hidden');
+    setStateFill('');
+    setStateShare('hidden');
+  }
+  else if (selected.id === 'collapseShare') {
+    setStateDesign('hidden');
+    setStateFill('hidden');
+    setStateShare('');
+  }
+}
   return (
     <div>
       <div className='page_interactive'>
@@ -86,13 +109,13 @@ function App() {
           <form className='form'>
             <section className='select'>
               <fieldset className='desing'>
-                <section className='section--title desing__title'>
+                <section onClick={handleCollapsable} id="collapseDesign" className='section--title desing__title'>
                   <i className='far fa-object-ungroup icon'></i>
                   <h3 className='title title2'>Diseña</h3>
                   <i className='fas fa-chevron-down arrow'></i>
                 </section>
 
-                <section className='options hidden'>
+                <section className={`options ${stateDesign}`}>
                   <h6 className='options__subtitle subtitle'>Colores</h6>
                   <div className='radio'>
                     <div className='option'>
@@ -145,13 +168,13 @@ function App() {
               </fieldset>
 
               <fieldset className='fill'>
-                <section className='section--title'>
+                <section  onClick={handleCollapsable}  id="collapseFill"className='section--title'>
                   <i className='far fa-keyboard icon'></i>
                   <h3 className='title '>Rellena</h3>
                   <i className='fas fa-chevron-down arrow'></i>
                 </section>
 
-                <section className='hidden'>
+                <section className={stateFill}>
                   <div className='fill__data'>
                     <label htmlFor='fullName' className='fill__label'>
                       Nombre completo
@@ -251,13 +274,13 @@ function App() {
               </fieldset>
 
               <fieldset className='share'>
-                <section className='section--title'>
+                <section  onClick={handleCollapsable}  id="collapseShare" className='section--title'>
                   <i className='fas fa-share-alt icon'></i>
                   <h3 className='title '>Comparte</h3>
                   <i className='fas fa-chevron-down arrow'></i>
                 </section>
 
-                <section className='hidden'>
+                <section className={stateShare}>
                   <button className='share--button'>
                     <i className='far fa-id-card'></i>
                     <span> Crear tarjeta</span>
