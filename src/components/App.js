@@ -3,6 +3,7 @@ import logo from '../images/awesome-logo-card.png';
 import logo3 from '../images/logo-adalab.png';
 
 function App() {
+  
   return (
     <div>
       <div className='page_interactive'>
@@ -19,16 +20,16 @@ function App() {
         <main className='main_interactive'>
           <section className='card__first__view'>
             <div className='card__result'>
-              <button className='button__reset js_reset'>
+              <button className='button__reset'>
                 <i className='far fa-trash-alt'></i> reset
               </button>
 
-              <div className='card__example palette_0 js_palette_result'>
-                <div className='text__section color_line js_text_section'>
-                  <h3 className='name__card color_text js_text_result'>
+              <div className='card__example palette_0'>
+                <div className='text__section color_line'>
+                  <h3 className='name__card color_text'>
                     Nombre Apellido
                   </h3>
-                  <h4 className='job__name color_job js_text_result'>
+                  <h4 className='job__name color_job'>
                     Front-end developer
                   </h4>
                 </div>
@@ -37,13 +38,13 @@ function App() {
                   <div
                     alt='yourlogo'
                     title='yourlogo'
-                    className='photo__example--logo profile__image js__profile-image'
+                    className='photo__example--logo profile__image'
                   ></div>
                 </div>
 
                 <div className='link__section'>
                   <a
-                    className='circle__awesome color_circle js_link_result'
+                    className='circle__awesome color_circle'
                     href={'tel:'}
                     target='_blank'
                     rel='noreferrer'
@@ -52,7 +53,7 @@ function App() {
                   </a>
 
                   <a
-                    className='circle__awesome color_circle js_link_result'
+                    className='circle__awesome color_circle'
                     href={'mailto:'}
                     target='_blank'
                     rel='noreferrer'
@@ -61,7 +62,7 @@ function App() {
                   </a>
 
                   <a
-                    className='circle__awesome color_circle js_link_result'
+                    className='circle__awesome color_circle'
                     href={'.'}
                     target='_blank'
                     rel='noreferrer'
@@ -70,7 +71,7 @@ function App() {
                   </a>
 
                   <a
-                    className='circle__awesome color_circle js_link_result'
+                    className='circle__awesome color_circle'
                     href={'.'}
                     target='_blank'
                     rel='noreferrer'
@@ -82,16 +83,16 @@ function App() {
             </div>
           </section>
 
-          <form className='form js_form'>
+          <form className='form'>
             <section className='select'>
               <fieldset className='desing'>
-                <section className='section--title desing__title js_collapsable_title'>
+                <section className='section--title desing__title'>
                   <i className='far fa-object-ungroup icon'></i>
                   <h3 className='title title2'>Diseña</h3>
-                  <i className='fas fa-chevron-down arrow js_arrow'></i>
+                  <i className='fas fa-chevron-down arrow'></i>
                 </section>
 
-                <section className='options js_collapsable_content hidden'>
+                <section className='options hidden'>
                   <h6 className='options__subtitle subtitle'>Colores</h6>
                   <div className='radio'>
                     <div className='option'>
@@ -101,7 +102,6 @@ function App() {
                         type='radio'
                         name='color'
                         value='0'
-                        className='js_radio js_palettes'
                         defaultChecked
                       />
                       <div className='colors-container'>
@@ -118,7 +118,6 @@ function App() {
                         type='radio'
                         name='color'
                         value='1'
-                        className='js_radio js_palettes'
                       />
                       <div className='colors-container'>
                         <div className='colors-container__color dried_blood'></div>
@@ -134,7 +133,6 @@ function App() {
                         type='radio'
                         name='color'
                         value='2'
-                        className='js_radio js_palettes'
                       />
                       <div className='colors-container'>
                         <div className='colors-container__color slate'></div>
@@ -147,13 +145,13 @@ function App() {
               </fieldset>
 
               <fieldset className='fill'>
-                <section className='section--title  js_collapsable_title'>
+                <section className='section--title'>
                   <i className='far fa-keyboard icon'></i>
                   <h3 className='title '>Rellena</h3>
-                  <i className='fas fa-chevron-down arrow js_arrow'></i>
+                  <i className='fas fa-chevron-down arrow'></i>
                 </section>
 
-                <section className='js_collapsable_content hidden'>
+                <section className='hidden'>
                   <div className='fill__data'>
                     <label htmlFor='fullName' className='fill__label'>
                       Nombre completo
@@ -164,7 +162,7 @@ function App() {
                       placeholder='Ej: I am Groot!'
                       type='text'
                       name='fullName'
-                      className='fill__input js_text_type js_name'
+                      className='fill__input'
                       required=''
                     />
                     <label htmlFor='job' className='fill__label'>
@@ -176,7 +174,7 @@ function App() {
                       placeholder='Ej: I am Groot-developer'
                       type='text'
                       name='job'
-                      className='fill__input js_text_type js_job'
+                      className='fill__input'
                       required=''
                     />
                   </div>
@@ -197,10 +195,10 @@ function App() {
                       type='file'
                       name=''
                       id='img-selector'
-                      className='fill__photo--hiddenField js__profile-upload-btn'
+                      className='fill__photo--hiddenField'
                     />
 
-                    <div className='fill__photo--preview js__profile-preview'></div>
+                    <div className='fill__photo--preview'></div>
                   </div>
 
                   <div className='fill__media'>
@@ -212,7 +210,7 @@ function App() {
                       placeholder='Ej: iamgroot@gmail.com'
                       type='email'
                       name='emailAddress'
-                      className='fill__input js_link_type js_email'
+                      className='fill__input'
                       required=''
                     />
                     <label htmlFor='phone' className='fill__label'>
@@ -223,7 +221,7 @@ function App() {
                       placeholder='Ej: 555-55-55-55'
                       type='tel'
                       name='phone'
-                      className='fill__input js_link_type js_phone'
+                      className='fill__input'
                       required=''
                     />
                     <label htmlFor='linkedin' className='fill__label'>
@@ -234,7 +232,7 @@ function App() {
                       placeholder='Ej: linkedin.com/Groot'
                       type='text'
                       name='linkedin'
-                      className='fill__input js_link_type js_linkedin'
+                      className='fill__input'
                       required=''
                     />
                     <label htmlFor='github' className='fill__label'>
@@ -245,7 +243,7 @@ function App() {
                       placeholder='Ej: @Groot!'
                       type='text'
                       name='github'
-                      className='fill__input js_link_type js_github'
+                      className='fill__input'
                       required=''
                     />
                   </div>
@@ -253,14 +251,14 @@ function App() {
               </fieldset>
 
               <fieldset className='share'>
-                <section className='section--title  js_collapsable_title'>
+                <section className='section--title'>
                   <i className='fas fa-share-alt icon'></i>
                   <h3 className='title '>Comparte</h3>
-                  <i className='fas fa-chevron-down arrow js_arrow'></i>
+                  <i className='fas fa-chevron-down arrow'></i>
                 </section>
 
-                <section className='js_collapsable_content hidden'>
-                  <button className='share--button js_button_create'>
+                <section className='hidden'>
+                  <button className='share--button'>
                     <i className='far fa-id-card'></i>
                     <span> Crear tarjeta</span>
                   </button>
