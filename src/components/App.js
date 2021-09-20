@@ -8,6 +8,11 @@ const [stateDesign, setStateDesign] = useState('hidden');
 const [stateFill, setStateFill] = useState('hidden');
 const [stateShare, setStateShare] = useState('hidden');
 
+const [arrowDesign, setArrowDesign] = useState('');
+const [arrowFill, setArrowFill] = useState('');
+const [arrowShare, setArrowShare] = useState('');
+
+
 const handleCollapsable = (ev) => {
   const selected = ev.currentTarget;
   console.log(selected);
@@ -15,16 +20,25 @@ const handleCollapsable = (ev) => {
     setStateDesign('');
     setStateFill('hidden');
     setStateShare('hidden');
+    setArrowDesign('rotateArrowUp');
+    setArrowFill('');
+    setArrowShare('');
   }
   else if (selected.id === 'collapseFill') {
     setStateDesign('hidden');
     setStateFill('');
     setStateShare('hidden');
+    setArrowDesign('');
+    setArrowFill('rotateArrowUp');
+    setArrowShare('');
   }
   else if (selected.id === 'collapseShare') {
     setStateDesign('hidden');
     setStateFill('hidden');
-    setStateShare('');
+    setStateShare('');  
+    setArrowDesign('');
+    setArrowFill('');
+    setArrowShare('rotateArrowUp');
   }
 }
   return (
@@ -112,7 +126,7 @@ const handleCollapsable = (ev) => {
                 <section onClick={handleCollapsable} id="collapseDesign" className='section--title desing__title'>
                   <i className='far fa-object-ungroup icon'></i>
                   <h3 className='title title2'>Diseña</h3>
-                  <i className='fas fa-chevron-down arrow'></i>
+                  <i className= {`fas fa-chevron-down arrow ${arrowDesign}`}></i>
                 </section>
 
                 <section className={`options ${stateDesign}`}>
@@ -171,7 +185,7 @@ const handleCollapsable = (ev) => {
                 <section  onClick={handleCollapsable}  id="collapseFill"className='section--title'>
                   <i className='far fa-keyboard icon'></i>
                   <h3 className='title '>Rellena</h3>
-                  <i className='fas fa-chevron-down arrow'></i>
+                  <i className={`fas fa-chevron-down arrow ${arrowFill}`}></i>
                 </section>
 
                 <section className={stateFill}>
@@ -277,7 +291,7 @@ const handleCollapsable = (ev) => {
                 <section  onClick={handleCollapsable}  id="collapseShare" className='section--title'>
                   <i className='fas fa-share-alt icon'></i>
                   <h3 className='title '>Comparte</h3>
-                  <i className='fas fa-chevron-down arrow'></i>
+                  <i className={`fas fa-chevron-down arrow ${arrowShare}`}></i>
                 </section>
 
                 <section className={stateShare}>
