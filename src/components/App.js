@@ -113,7 +113,7 @@ function App() {
 
                   <a
                     className='circle__awesome color_circle'
-                    href={'mailto:' + data.email} //No va en chrome¿?
+                    href={'mailto:' + data.email}
                     target='_blank'
                     rel='noreferrer'
                   >
@@ -336,21 +336,23 @@ function App() {
                     <span> Crear tarjeta</span>
                   </button>
 
-                  <section className='creada js-twitter-share'>
-                    <h3 className='creada--title'>
-                      La tarjeta ha sido creada:
-                    </h3>
-                    <p className='creada--p js-card-link'></p>
-                    {/* <!-- pendiente hacerlo interactivo --> */}
-                    <button className='creada--button'>
-                      <i className='fab fa-twitter'></i>
-                      <span className='span'>Compartir en twitter</span>
-                    </button>
-                  </section>
-                  <div>
-                    <p className='js-hidden-box'>
-                      Necesita rellenar todos los campos
-                    </p>
+                  <div className='hidden'>
+                    <section className='creada js-twitter-share'>
+                      <h3 className='creada--title'>
+                        La tarjeta ha sido creada:
+                      </h3>
+                      <p className='creada--p js-card-link'></p>
+                      {/* <!-- pendiente hacerlo interactivo --> */}
+                      <button className='creada--button'>
+                        <i className='fab fa-twitter'></i>
+                        <span className='span'>Compartir en twitter</span>
+                      </button>
+                    </section>
+                    <div>
+                      <p className='js-hidden-box'>
+                        Necesita rellenar todos los campos
+                      </p>
+                    </div>
                   </div>
                 </section>
               </fieldset>
