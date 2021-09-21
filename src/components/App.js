@@ -1,46 +1,68 @@
 import '../styles/App.scss';
 import logo from '../images/awesome-logo-card.png';
 import logo3 from '../images/logo-adalab.png';
-import {useState} from 'react';
+import { useState } from 'react';
 
 function App() {
-const [stateDesign, setStateDesign] = useState('hidden');
-const [stateFill, setStateFill] = useState('hidden');
-const [stateShare, setStateShare] = useState('hidden');
+  const [stateDesign, setStateDesign] = useState('hidden');
+  const [stateFill, setStateFill] = useState('hidden');
+  const [stateShare, setStateShare] = useState('hidden');
 
-const [arrowDesign, setArrowDesign] = useState('');
-const [arrowFill, setArrowFill] = useState('');
-const [arrowShare, setArrowShare] = useState('');
+  const [arrowDesign, setArrowDesign] = useState('');
+  const [arrowFill, setArrowFill] = useState('');
+  const [arrowShare, setArrowShare] = useState('');
+  const [data, setData] = useState({
+    palette: 1,
+    name: '',
+    job: '',
+    phone: '',
+    email: '',
+    linkedin: '',
+    github: '',
+  });
 
-
-const handleCollapsable = (ev) => {
-  const selected = ev.currentTarget;
-  console.log(selected);
-  if(selected.id === 'collapseDesign'){
-    setStateDesign('');
-    setStateFill('hidden');
-    setStateShare('hidden');
-    setArrowDesign('rotateArrowUp');
-    setArrowFill('');
-    setArrowShare('');
-  }
-  else if (selected.id === 'collapseFill') {
-    setStateDesign('hidden');
-    setStateFill('');
-    setStateShare('hidden');
-    setArrowDesign('');
-    setArrowFill('rotateArrowUp');
-    setArrowShare('');
-  }
-  else if (selected.id === 'collapseShare') {
-    setStateDesign('hidden');
-    setStateFill('hidden');
-    setStateShare('');  
-    setArrowDesign('');
-    setArrowFill('');
-    setArrowShare('rotateArrowUp');
-  }
-}
+  const handleCollapsable = (ev) => {
+    const selected = ev.currentTarget;
+    console.log(selected);
+    if (selected.id === 'collapseDesign') {
+      setStateDesign('');
+      setStateFill('hidden');
+      setStateShare('hidden');
+      setArrowDesign('rotateArrowUp');
+      setArrowFill('');
+      setArrowShare('');
+    } else if (selected.id === 'collapseFill') {
+      setStateDesign('hidden');
+      setStateFill('');
+      setStateShare('hidden');
+      setArrowDesign('');
+      setArrowFill('rotateArrowUp');
+      setArrowShare('');
+    } else if (selected.id === 'collapseShare') {
+      setStateDesign('hidden');
+      setStateFill('hidden');
+      setStateShare('');
+      setArrowDesign('');
+      setArrowFill('');
+      setArrowShare('rotateArrowUp');
+    }
+  };
+  const handleInput = (ev) => {
+    const whichInput = ev.currentTarget.name;
+    if (whichInput === 'name') {
+      setData({ ...data, name: ev.currentTarget.value });
+    } else if (whichInput === 'job') {
+      setData({ ...data, job: ev.currentTarget.value });
+    } else if (whichInput === 'phone') {
+      setData({ ...data, phone: ev.currentTarget.value });
+    } else if (whichInput === 'email') {
+      setData({ ...data, email: ev.currentTarget.value });
+    } else if (whichInput === 'linkedin') {
+      setData({ ...data, linkedin: ev.currentTarget.value });
+    } else if (whichInput === 'github') {
+      setData({ ...data, github: ev.currentTarget.value });
+    }
+  };
   return (
     <div>
       <div className='page_interactive'>
@@ -64,10 +86,10 @@ const handleCollapsable = (ev) => {
               <div className='card__example palette_0'>
                 <div className='text__section color_line'>
                   <h3 className='name__card color_text'>
-                    Nombre Apellido
+                    {data.name === '' ? 'groot!' : data.name}
                   </h3>
                   <h4 className='job__name color_job'>
-                    Front-end developer
+                    {data.job === '' ? 'groot developer' : data.job}
                   </h4>
                 </div>
 
@@ -82,7 +104,7 @@ const handleCollapsable = (ev) => {
                 <div className='link__section'>
                   <a
                     className='circle__awesome color_circle'
-                    href={'tel:'}
+                    href={'tel:' + data.phone}
                     target='_blank'
                     rel='noreferrer'
                   >
@@ -91,7 +113,7 @@ const handleCollapsable = (ev) => {
 
                   <a
                     className='circle__awesome color_circle'
-                    href={'mailto:'}
+                    href={'mailto:' + data.email} //No va en chrome¿?
                     target='_blank'
                     rel='noreferrer'
                   >
@@ -100,7 +122,7 @@ const handleCollapsable = (ev) => {
 
                   <a
                     className='circle__awesome color_circle'
-                    href={'.'}
+                    href={'https://www.linkedin.com/in/' + data.linkedin}
                     target='_blank'
                     rel='noreferrer'
                   >
@@ -109,7 +131,7 @@ const handleCollapsable = (ev) => {
 
                   <a
                     className='circle__awesome color_circle'
-                    href={'.'}
+                    href={'https://github.com/' + data.github}
                     target='_blank'
                     rel='noreferrer'
                   >
@@ -123,10 +145,14 @@ const handleCollapsable = (ev) => {
           <form className='form'>
             <section className='select'>
               <fieldset className='desing'>
-                <section onClick={handleCollapsable} id="collapseDesign" className='section--title desing__title'>
+                <section
+                  onClick={handleCollapsable}
+                  id='collapseDesign'
+                  className='section--title desing__title'
+                >
                   <i className='far fa-object-ungroup icon'></i>
                   <h3 className='title title2'>Diseña</h3>
-                  <i className= {`fas fa-chevron-down arrow ${arrowDesign}`}></i>
+                  <i className={`fas fa-chevron-down arrow ${arrowDesign}`}></i>
                 </section>
 
                 <section className={`options ${stateDesign}`}>
@@ -150,12 +176,7 @@ const handleCollapsable = (ev) => {
 
                     <div className='option'>
                       <label htmlFor='color'> </label>
-                      <input
-                        id='color'
-                        type='radio'
-                        name='color'
-                        value='1'
-                      />
+                      <input id='color' type='radio' name='color' value='1' />
                       <div className='colors-container'>
                         <div className='colors-container__color dried_blood'></div>
                         <div className='colors-container__color rusty_red'></div>
@@ -165,12 +186,7 @@ const handleCollapsable = (ev) => {
 
                     <div className='option'>
                       <label htmlFor='color'> </label>
-                      <input
-                        id='color'
-                        type='radio'
-                        name='color'
-                        value='2'
-                      />
+                      <input id='color' type='radio' name='color' value='2' />
                       <div className='colors-container'>
                         <div className='colors-container__color slate'></div>
                         <div className='colors-container__color faded_orange'></div>
@@ -182,7 +198,11 @@ const handleCollapsable = (ev) => {
               </fieldset>
 
               <fieldset className='fill'>
-                <section  onClick={handleCollapsable}  id="collapseFill"className='section--title'>
+                <section
+                  onClick={handleCollapsable}
+                  id='collapseFill'
+                  className='section--title'
+                >
                   <i className='far fa-keyboard icon'></i>
                   <h3 className='title '>Rellena</h3>
                   <i className={`fas fa-chevron-down arrow ${arrowFill}`}></i>
@@ -190,17 +210,19 @@ const handleCollapsable = (ev) => {
 
                 <section className={stateFill}>
                   <div className='fill__data'>
-                    <label htmlFor='fullName' className='fill__label'>
+                    <label htmlFor='name' className='fill__label'>
                       Nombre completo
                       <span className='fill__label--asterisk'>*</span>
                     </label>
                     <input
-                      id='fullName'
-                      placeholder='Ej: I am Groot!'
+                      id='name'
+                      placeholder='Ej: Groot!'
                       type='text'
-                      name='fullName'
+                      name='name'
                       className='fill__input'
                       required=''
+                      onChange={handleInput}
+                      value={data.name}
                     />
                     <label htmlFor='job' className='fill__label'>
                       Puesto<span className='fill__label--asterisk'>*</span>
@@ -208,11 +230,13 @@ const handleCollapsable = (ev) => {
 
                     <input
                       id='job'
-                      placeholder='Ej: I am Groot-developer'
+                      placeholder='Ej: Groot-developer'
                       type='text'
                       name='job'
                       className='fill__input'
                       required=''
+                      onChange={handleInput}
+                      value={data.job}
                     />
                   </div>
 
@@ -230,7 +254,7 @@ const handleCollapsable = (ev) => {
                     </label>
                     <input
                       type='file'
-                      name=''
+                      name='photo'
                       id='img-selector'
                       className='fill__photo--hiddenField'
                     />
@@ -239,16 +263,18 @@ const handleCollapsable = (ev) => {
                   </div>
 
                   <div className='fill__media'>
-                    <label htmlFor='emailAddress' className='fill__label'>
+                    <label htmlFor='email' className='fill__label'>
                       Email<span className='fill__label--asterisk'>*</span>
                     </label>
                     <input
-                      id='emailAddress'
+                      id='email'
                       placeholder='Ej: iamgroot@gmail.com'
                       type='email'
-                      name='emailAddress'
+                      name='email'
                       className='fill__input'
                       required=''
+                      onChange={handleInput}
+                      value={data.email}
                     />
                     <label htmlFor='phone' className='fill__label'>
                       Teléfono<span className='fill__label--asterisk'>*</span>
@@ -260,6 +286,8 @@ const handleCollapsable = (ev) => {
                       name='phone'
                       className='fill__input'
                       required=''
+                      onChange={handleInput}
+                      value={data.phone}
                     />
                     <label htmlFor='linkedin' className='fill__label'>
                       Linkedin<span className='fill__label--asterisk'>*</span>
@@ -271,6 +299,8 @@ const handleCollapsable = (ev) => {
                       name='linkedin'
                       className='fill__input'
                       required=''
+                      onChange={handleInput}
+                      value={data.linkedin}
                     />
                     <label htmlFor='github' className='fill__label'>
                       Github<span className='fill__label--asterisk'>*</span>
@@ -282,13 +312,19 @@ const handleCollapsable = (ev) => {
                       name='github'
                       className='fill__input'
                       required=''
+                      onChange={handleInput}
+                      value={data.github}
                     />
                   </div>
                 </section>
               </fieldset>
 
               <fieldset className='share'>
-                <section  onClick={handleCollapsable}  id="collapseShare" className='section--title'>
+                <section
+                  onClick={handleCollapsable}
+                  id='collapseShare'
+                  className='section--title'
+                >
                   <i className='fas fa-share-alt icon'></i>
                   <h3 className='title '>Comparte</h3>
                   <i className={`fas fa-chevron-down arrow ${arrowShare}`}></i>
