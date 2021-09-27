@@ -1,7 +1,8 @@
 import '../styles/App.scss';
-import logo from '../images/awesome-logo-card.png';
+
 import logo3 from '../images/logo-adalab.png';
 import { useState } from 'react';
+import Header from './Header';
 
 function App() {
   const [stateDesign, setStateDesign] = useState('hidden');
@@ -66,16 +67,7 @@ function App() {
   return (
     <div>
       <div className='page_interactive'>
-        <header className='header'>
-          <a href={'./index.html'} target='_blank' rel='noreferrer'>
-            <img
-              src={logo}
-              alt='Awesome profile cards'
-              className='header__img'
-            />
-          </a>
-        </header>
-
+        <Header />
         <main className='main_interactive'>
           <section className='card__first__view'>
             <div className='card__result'>
