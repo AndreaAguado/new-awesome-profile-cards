@@ -1,11 +1,15 @@
+@import '../core/variables';
+@import '../core/mixins';
+@import '../pages/Form.scss';
 .desing {
   text-transform: uppercase;
   &__title {
     margin-top: 0px;
   }
-  .title2 {
-    padding-bottom: 0px;
-  }
+  // quitamos .title2 ya que sobreescribe el padding del title de los collapsables
+  // .title2 {
+  //   padding-bottom: 0px;
+  // }
 }
 
 .options {
