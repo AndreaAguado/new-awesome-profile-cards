@@ -1,9 +1,6 @@
-import '../styles/pages/Form.scss';
 import { useState } from 'react';
-import Design from './Design';
-import Fill from './Fill';
-import Share from './Share';
-const Form = () => {
+import '../styles/layout/Share.scss'
+const Share = () => {
   const [stateDesign, setStateDesign] = useState('hidden');
   const [stateFill, setStateFill] = useState('hidden');
   const [stateShare, setStateShare] = useState('hidden');
@@ -46,30 +43,40 @@ const Form = () => {
       setArrowShare('rotateArrowUp');
     }
   };
-  //   const handleInput = (ev) => {
-  //     const whichInput = ev.currentTarget.name;
-  //     if (whichInput === 'name') {
-  //       setData({ ...data, name: ev.currentTarget.value });
-  //     } else if (whichInput === 'job') {
-  //       setData({ ...data, job: ev.currentTarget.value });
-  //     } else if (whichInput === 'phone') {
-  //       setData({ ...data, phone: ev.currentTarget.value });
-  //     } else if (whichInput === 'email') {
-  //       setData({ ...data, email: ev.currentTarget.value });
-  //     } else if (whichInput === 'linkedin') {
-  //       setData({ ...data, linkedin: ev.currentTarget.value });
-  //     } else if (whichInput === 'github') {
-  //       setData({ ...data, github: ev.currentTarget.value });
-  //     }
-  //   };
   return (
-    <form className='form'>
-      <section className='select'>
-        <Design />
-        <Fill />
-        <Share />
+    <fieldset className='share'>
+      <section
+        onClick={handleCollapsable}
+        id='collapseShare'
+        className='section--title'
+      >
+        <i className='fas fa-share-alt icon'></i>
+        <h3 className='title '>Comparte</h3>
+        <i className={`fas fa-chevron-down arrow ${arrowShare}`}></i>
       </section>
-    </form>
+
+      <section className={stateShare}>
+        <button className='share--button'>
+          <i className='far fa-id-card'></i>
+          <span> Crear tarjeta</span>
+        </button>
+
+        <div className='hidden'>
+          <section className='creada js-twitter-share'>
+            <h3 className='creada--title'>La tarjeta ha sido creada:</h3>
+            <p className='creada--p js-card-link'></p>
+            {/* <!-- pendiente hacerlo interactivo --> */}
+            <button className='creada--button'>
+              <i className='fab fa-twitter'></i>
+              <span className='span'>Compartir en twitter</span>
+            </button>
+          </section>
+          <div>
+            <p className='js-hidden-box'>Necesita rellenar todos los campos</p>
+          </div>
+        </div>
+      </section>
+    </fieldset>
   );
 };
-export default Form;
+export default Share;
