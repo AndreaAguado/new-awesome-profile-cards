@@ -1,8 +1,8 @@
 import '../styles/App.scss';
 
-import logo3 from '../images/logo-adalab.png';
 import { useState } from 'react';
 import Header from './Header';
+import Footer from './Footer';
 
 function App() {
   const [stateDesign, setStateDesign] = useState('hidden');
@@ -351,17 +351,7 @@ function App() {
             </section>
           </form>
         </main>
-        <footer className='page__footer'>
-          <small className='copy'> Awesome profile-cards &copy; 2021 </small>
-          <a href={'https://adalab.es/'} target='_blank' rel='noreferrer'>
-            <img
-              src={logo3}
-              alt='adalab logo'
-              title='adalab logo'
-              className='adalab__logo'
-            />
-          </a>
-        </footer>
+        <Footer />
       </div>
     </div>
   );
