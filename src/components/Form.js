@@ -9,7 +9,7 @@ const Form = (props) => {
       <section className='select'>
         <Design data={props.data} stateDesign={props.stateDesign} arrowDesign={props.arrowDesign} handleInput={props.handleInput} handleCollapsable={props.handleCollapsable}/>
         <Fill data={props.data} stateFill={props.stateFill} arrowFill={props.arrowFill} handleInput={props.handleInput} handleCollapsable={props.handleCollapsable}/>
-        <Share />
+        <Share data={props.data} stateShare={props.stateShare} arrowShare={props.arrowShare} handleInput={props.handleInput} handleCollapsable={props.handleCollapsable}/>
       </section>
     </form>
   );

@@ -14,7 +14,7 @@ function App() {
   const [arrowFill, setArrowFill] = useState('');
   const [arrowShare, setArrowShare] = useState('');
   const [data, setData] = useState({
-    palette: 1,
+    palette: '',
     name: '',
     job: '',
     phone: '',
@@ -134,7 +134,7 @@ function App() {
               </div>
             </div>
           </section>
-          <Form data={data} stateDesign={stateDesign} arrowDesign={arrowDesign} stateFill={stateFill} arrowFill={arrowFill} handleInput={handleInput} handleCollapsable={handleCollapsable} />
+          <Form data={data} stateDesign={stateDesign} arrowDesign={arrowDesign} stateFill={stateFill} arrowFill={arrowFill} stateShare={stateShare} arrowShare={arrowShare} handleInput={handleInput} handleCollapsable={handleCollapsable} />
         </main>
         <Footer />
       </div>
