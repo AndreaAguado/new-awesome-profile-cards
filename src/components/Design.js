@@ -2,7 +2,7 @@ import '../styles/layout/Design.scss';
 const Design = (props) => {
 
   const handleChange =(ev) => {
-    props.handleInput(ev.target.checked);
+    props.handleInput(ev.target.id, ev.target.name);
   }
   const handleClick = (ev) => {
     props.handleCollapsable(ev.currentTarget.id)
@@ -26,11 +26,11 @@ const Design = (props) => {
             <label htmlFor='color'> </label>
             <input 
             onChange={handleChange}
-              id='color'
+              id='0'
               type='radio'
-              name='color'
+              name='palette'
               value='0'
-              defaultChecked
+              checked={props.checked}
             />
             <div className='colors-container'>
               <div className='colors-container__color dark_green_blue'></div>
@@ -41,7 +41,7 @@ const Design = (props) => {
 
           <div className='option'>
             <label htmlFor='color'> </label>
-            <input onChange={handleChange} id='color' type='radio' name='color' value='1' />
+            <input onChange={handleChange} id='1' type='radio' name='palette' value='1' checked={props.checked} />
             <div className='colors-container'>
               <div className='colors-container__color dried_blood'></div>
               <div className='colors-container__color rusty_red'></div>
@@ -51,7 +51,7 @@ const Design = (props) => {
 
           <div className='option'>
             <label htmlFor='color'> </label>
-            <input onChange={handleChange} id='color' type='radio' name='color' value='2' />
+            <input onChange={handleChange} id='2' type='radio' name='palette' value='2' checked={props.checked}/>
             <div className='colors-container'>
               <div className='colors-container__color slate'></div>
               <div className='colors-container__color faded_orange'></div>

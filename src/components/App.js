@@ -51,7 +51,10 @@ function App() {
   };
   const handleInput = (value,name) => {
     const whichInput = name;
-    if (whichInput === 'name') {
+    if (whichInput === 'palette'){
+      setData({...data, palette: value});
+    }
+    else if (whichInput === 'name') {
       setData({ ...data, name: value });
     } else if (whichInput === 'job') {
       setData({ ...data, job: value });
