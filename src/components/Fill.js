@@ -1,77 +1,24 @@
-import { useState } from 'react';
 import '../styles/layout/Fill.scss';
-const Fill = () => {
-  const [stateDesign, setStateDesign] = useState('hidden');
-  const [stateFill, setStateFill] = useState('hidden');
-  const [stateShare, setStateShare] = useState('hidden');
-
-  const [arrowDesign, setArrowDesign] = useState('');
-  const [arrowFill, setArrowFill] = useState('');
-  const [arrowShare, setArrowShare] = useState('');
-  const [data, setData] = useState({
-    palette: 1,
-    name: '',
-    job: '',
-    phone: '',
-    email: '',
-    linkedin: '',
-    github: '',
-  });
-  const handleCollapsable = (ev) => {
-    const selected = ev.currentTarget;
-    console.log(selected);
-    if (selected.id === 'collapseDesign') {
-      setStateDesign('');
-      setStateFill('hidden');
-      setStateShare('hidden');
-      setArrowDesign('rotateArrowUp');
-      setArrowFill('');
-      setArrowShare('');
-    } else if (selected.id === 'collapseFill') {
-      setStateDesign('hidden');
-      setStateFill('');
-      setStateShare('hidden');
-      setArrowDesign('');
-      setArrowFill('rotateArrowUp');
-      setArrowShare('');
-    } else if (selected.id === 'collapseShare') {
-      setStateDesign('hidden');
-      setStateFill('hidden');
-      setStateShare('');
-      setArrowDesign('');
-      setArrowFill('');
-      setArrowShare('rotateArrowUp');
-    }
-  };
-  const handleInput = (ev) => {
-    const whichInput = ev.currentTarget.name;
-    if (whichInput === 'name') {
-      setData({ ...data, name: ev.currentTarget.value });
-    } else if (whichInput === 'job') {
-      setData({ ...data, job: ev.currentTarget.value });
-    } else if (whichInput === 'phone') {
-      setData({ ...data, phone: ev.currentTarget.value });
-    } else if (whichInput === 'email') {
-      setData({ ...data, email: ev.currentTarget.value });
-    } else if (whichInput === 'linkedin') {
-      setData({ ...data, linkedin: ev.currentTarget.value });
-    } else if (whichInput === 'github') {
-      setData({ ...data, github: ev.currentTarget.value });
-    }
-  };
+const Fill = (props) => {
+  const handleChange =(ev) => {
+    props.handleInput(ev.currentTarget.value, ev.currentTarget.name);
+  }
+  const handleClick = (ev) => {
+    props.handleCollapsable(ev.currentTarget.id)
+  }
   return (
     <fieldset className='fill'>
       <section
-        onClick={handleCollapsable}
+        onClick={handleClick}
         id='collapseFill'
         className='section--title'
       >
         <i className='far fa-keyboard icon'></i>
         <h3 className='title '>Rellena</h3>
-        <i className={`fas fa-chevron-down arrow ${arrowFill}`}></i>
+        <i className={`fas fa-chevron-down arrow ${props.arrowFill}`}></i>
       </section>
 
-      <section className={stateFill}>
+      <section className={props.stateFill}>
         <div className='fill__data'>
           <label htmlFor='name' className='fill__label'>
             Nombre completo
@@ -84,8 +31,8 @@ const Fill = () => {
             name='name'
             className='fill__input'
             required=''
-            onChange={handleInput}
-            value={data.name}
+            onChange={handleChange}
+            value={props.data.name}
           />
           <label htmlFor='job' className='fill__label'>
             Puesto<span className='fill__label--asterisk'>*</span>
@@ -98,8 +45,8 @@ const Fill = () => {
             name='job'
             className='fill__input'
             required=''
-            onChange={handleInput}
-            value={data.job}
+            onChange={handleChange}
+            value={props.data.job}
           />
         </div>
 
@@ -133,8 +80,8 @@ const Fill = () => {
             name='email'
             className='fill__input'
             required=''
-            onChange={handleInput}
-            value={data.email}
+            onChange={handleChange}
+            value={props.data.email}
           />
           <label htmlFor='phone' className='fill__label'>
             Teléfono<span className='fill__label--asterisk'>*</span>
@@ -146,8 +93,8 @@ const Fill = () => {
             name='phone'
             className='fill__input'
             required=''
-            onChange={handleInput}
-            value={data.phone}
+            onChange={handleChange}
+            value={props.data.phone}
           />
           <label htmlFor='linkedin' className='fill__label'>
             Linkedin<span className='fill__label--asterisk'>*</span>
@@ -159,8 +106,8 @@ const Fill = () => {
             name='linkedin'
             className='fill__input'
             required=''
-            onChange={handleInput}
-            value={data.linkedin}
+            onChange={handleChange}
+            value={props.data.linkedin}
           />
           <label htmlFor='github' className='fill__label'>
             Github<span className='fill__label--asterisk'>*</span>
@@ -172,8 +119,8 @@ const Fill = () => {
             name='github'
             className='fill__input'
             required=''
-            onChange={handleInput}
-            value={data.github}
+            onChange={handleChange}
+            value={props.data.github}
           />
         </div>
       </section>

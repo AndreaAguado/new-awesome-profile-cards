@@ -23,24 +23,24 @@ function App() {
     github: '',
   });
 
-  const handleCollapsable = (ev) => {
-    const selected = ev.currentTarget;
+  const handleCollapsable = (id) => {
+    const selected = id;
     console.log(selected);
-    if (selected.id === 'collapseDesign') {
+    if (selected === 'collapseDesign') {
       setStateDesign('');
       setStateFill('hidden');
       setStateShare('hidden');
       setArrowDesign('rotateArrowUp');
       setArrowFill('');
       setArrowShare('');
-    } else if (selected.id === 'collapseFill') {
+    } else if (selected === 'collapseFill') {
       setStateDesign('hidden');
       setStateFill('');
       setStateShare('hidden');
       setArrowDesign('');
       setArrowFill('rotateArrowUp');
       setArrowShare('');
-    } else if (selected.id === 'collapseShare') {
+    } else if (selected === 'collapseShare') {
       setStateDesign('hidden');
       setStateFill('hidden');
       setStateShare('');
@@ -49,20 +49,20 @@ function App() {
       setArrowShare('rotateArrowUp');
     }
   };
-  const handleInput = (ev) => {
-    const whichInput = ev.currentTarget.name;
+  const handleInput = (value,name) => {
+    const whichInput = name;
     if (whichInput === 'name') {
-      setData({ ...data, name: ev.currentTarget.value });
+      setData({ ...data, name: value });
     } else if (whichInput === 'job') {
-      setData({ ...data, job: ev.currentTarget.value });
+      setData({ ...data, job: value });
     } else if (whichInput === 'phone') {
-      setData({ ...data, phone: ev.currentTarget.value });
+      setData({ ...data, phone: value });
     } else if (whichInput === 'email') {
-      setData({ ...data, email: ev.currentTarget.value });
+      setData({ ...data, email: value });
     } else if (whichInput === 'linkedin') {
-      setData({ ...data, linkedin: ev.currentTarget.value });
+      setData({ ...data, linkedin: value });
     } else if (whichInput === 'github') {
-      setData({ ...data, github: ev.currentTarget.value });
+      setData({ ...data, github: value });
     }
   };
   return (
@@ -134,7 +134,7 @@ function App() {
               </div>
             </div>
           </section>
-          <Form data={data} stateDesign={stateDesign} arrowDesign={arrowDesign} handleInput={handleInput} handleCollapsable={handleCollapsable}/>
+          <Form data={data} stateDesign={stateDesign} arrowDesign={arrowDesign} stateFill={stateFill} arrowFill={arrowFill} handleInput={handleInput} handleCollapsable={handleCollapsable} />
         </main>
         <Footer />
       </div>

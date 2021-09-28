@@ -5,7 +5,7 @@ const Design = (props) => {
     props.handleInput(ev.target.checked);
   }
   const handleClick = (ev) => {
-    props.handleCollapsable(ev.target.id)
+    props.handleCollapsable(ev.currentTarget.id)
   }
   return (
     <fieldset className='desing'>
