@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import Form from './Form';
+import Preview from './Preview';
 
 function App() {
   const [stateDesign, setStateDesign] = useState('hidden');
@@ -73,70 +74,7 @@ function App() {
       <div className='page_interactive'>
         <Header />
         <main className='main_interactive'>
-          <section className='card__first__view'>
-            <div className='card__result'>
-              <button className='button__reset'>
-                <i className='far fa-trash-alt'></i> reset
-              </button>
-
-              <div className='card__example palette_0'>
-                <div className='text__section color_line'>
-                  <h3 className='name__card color_text'>
-                    {data.name === '' ? 'groot!' : data.name}
-                  </h3>
-                  <h4 className='job__name color_job'>
-                    {data.job === '' ? 'groot developer' : data.job}
-                  </h4>
-                </div>
-
-                <div className='photo__example'>
-                  <div
-                    alt='yourlogo'
-                    title='yourlogo'
-                    className='photo__example--logo profile__image'
-                  ></div>
-                </div>
-
-                <div className='link__section'>
-                  <a
-                    className='circle__awesome color_circle'
-                    href={'tel:' + data.phone}
-                    target='_blank'
-                    rel='noreferrer'
-                  >
-                    <i className='fas fa-mobile-alt'></i>
-                  </a>
-
-                  <a
-                    className='circle__awesome color_circle'
-                    href={'mailto:' + data.email}
-                    target='_blank'
-                    rel='noreferrer'
-                  >
-                    <i className='far fa-envelope'></i>
-                  </a>
-
-                  <a
-                    className='circle__awesome color_circle'
-                    href={'https://www.linkedin.com/in/' + data.linkedin}
-                    target='_blank'
-                    rel='noreferrer'
-                  >
-                    <i className='fab fa-linkedin-in'></i>
-                  </a>
-
-                  <a
-                    className='circle__awesome color_circle'
-                    href={'https://github.com/' + data.github}
-                    target='_blank'
-                    rel='noreferrer'
-                  >
-                    <i className='fab fa-github-alt'></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </section>
+          <Preview data={data} />
           <Form data={data} stateDesign={stateDesign} arrowDesign={arrowDesign} stateFill={stateFill} arrowFill={arrowFill} stateShare={stateShare} arrowShare={arrowShare} handleInput={handleInput} handleCollapsable={handleCollapsable} />
         </main>
         <Footer />
