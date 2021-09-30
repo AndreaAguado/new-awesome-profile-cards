@@ -18,6 +18,7 @@ function App() {
     palette: '0',
     name: '',
     job: '',
+    photo: '',
     phone: '',
     email: '',
     linkedin: '',
@@ -68,6 +69,11 @@ function App() {
       setData({ ...data, github: value });
     }
   };
+
+  const handleImage = (file) => {
+    console.log('img', file);
+  };
+  console.log(data);
   return (
     <div>
       <div className='page_interactive'>
@@ -84,6 +90,7 @@ function App() {
             arrowShare={arrowShare}
             handleInput={handleInput}
             handleCollapsable={handleCollapsable}
+            handleImage={handleImage}
           />
         </main>
         <Footer />

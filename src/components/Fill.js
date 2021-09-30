@@ -1,11 +1,12 @@
 import '../styles/layout/Fill.scss';
+import ImageReader from './ImageReader';
 const Fill = (props) => {
-  const handleChange =(ev) => {
+  const handleChange = (ev) => {
     props.handleInput(ev.currentTarget.value, ev.currentTarget.name);
-  }
+  };
   const handleClick = (ev) => {
-    props.handleCollapsable(ev.currentTarget.id)
-  }
+    props.handleCollapsable(ev.currentTarget.id);
+  };
   return (
     <fieldset className='fill'>
       <section
@@ -57,6 +58,7 @@ const Fill = (props) => {
           </label>
 
           <label className='fill__photo--upload-btn' htmlFor='img-selector'>
+            <ImageReader handleImage={props.handleImage} />
             Añadir imagen
           </label>
           <input
