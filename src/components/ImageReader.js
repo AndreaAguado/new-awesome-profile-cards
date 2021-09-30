@@ -2,8 +2,8 @@
 import { useRef, useState } from 'react';
 
 const ImageReader = (props) => {
-  const [fileSize, setFileSize] = useState(0);
-  const [fileType, setFileType] = useState('desconocida');
+  // const [fileSize, setFileSize] = useState(0);
+  // const [fileType, setFileType] = useState('desconocida');
 
   const fileElement = useRef();
 
@@ -15,9 +15,10 @@ const ImageReader = (props) => {
     if (selectedFile) {
       console.log(selectedFile);
 
-      setFileSize(selectedFile.size);
-      setFileType(selectedFile.type);
+      // setFileSize(selectedFile.size);
+      // setFileType(selectedFile.type);
       fileReader.readAsDataURL(selectedFile);
+
     }
   };
 
@@ -28,17 +29,14 @@ const ImageReader = (props) => {
   fileReader.addEventListener('load', getImage);
 
   return (
-    <div>
-      <label>
-        <input
-          className='fill__photo--hiddenField'
-          ref={fileElement}
-          type='file'
-          name='image-reader'
-          onChange={handleFile}
-        />
-      </label>
-    </div>
+    <input
+      id="img-selector"
+      className='fill__photo--hiddenField'
+      ref={fileElement}
+      type='file'
+      name='image-reader'
+      onChange={handleFile}
+    />
   );
 };
 

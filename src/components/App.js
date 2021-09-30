@@ -71,6 +71,7 @@ function App() {
   };
 
   const handleImage = (file) => {
+    setData({ ...data, photo: file });
     console.log('img', file);
   };
   console.log(data);

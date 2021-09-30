@@ -61,12 +61,12 @@ const Fill = (props) => {
             <ImageReader handleImage={props.handleImage} />
             Añadir imagen
           </label>
-          <input
+          {/* <input
             type='file'
             name='photo'
             id='img-selector'
             className='fill__photo--hiddenField'
-          />
+          /> */}
 
           <div className='fill__photo--preview'></div>
         </div>
