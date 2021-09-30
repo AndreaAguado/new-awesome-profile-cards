@@ -15,7 +15,7 @@ function App() {
   const [arrowFill, setArrowFill] = useState('');
   const [arrowShare, setArrowShare] = useState('');
   const [data, setData] = useState({
-    palette: '',
+    palette: '0',
     name: '',
     job: '',
     phone: '',
@@ -50,12 +50,11 @@ function App() {
       setArrowShare('rotateArrowUp');
     }
   };
-  const handleInput = (value,name) => {
+  const handleInput = (value, name) => {
     const whichInput = name;
-    if (whichInput === 'palette'){
-      setData({...data, palette: value});
-    }
-    else if (whichInput === 'name') {
+    if (whichInput === 'palette') {
+      setData({ ...data, palette: value });
+    } else if (whichInput === 'name') {
       setData({ ...data, name: value });
     } else if (whichInput === 'job') {
       setData({ ...data, job: value });
@@ -75,7 +74,17 @@ function App() {
         <Header />
         <main className='main_interactive'>
           <Preview data={data} />
-          <Form data={data} stateDesign={stateDesign} arrowDesign={arrowDesign} stateFill={stateFill} arrowFill={arrowFill} stateShare={stateShare} arrowShare={arrowShare} handleInput={handleInput} handleCollapsable={handleCollapsable} />
+          <Form
+            data={data}
+            stateDesign={stateDesign}
+            arrowDesign={arrowDesign}
+            stateFill={stateFill}
+            arrowFill={arrowFill}
+            stateShare={stateShare}
+            arrowShare={arrowShare}
+            handleInput={handleInput}
+            handleCollapsable={handleCollapsable}
+          />
         </main>
         <Footer />
       </div>
