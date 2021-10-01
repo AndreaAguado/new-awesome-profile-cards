@@ -18,7 +18,7 @@ const Preview = (props) => {
 
           <div className='photo__example'>
             <div
-              url={props.data.photo}
+              style={{ backgroundImage: `url(${props.data.photo})` }}
               alt='yourlogo'
               title='yourlogo'
               className='photo__example--logo profile__image'
