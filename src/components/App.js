@@ -1,12 +1,13 @@
 import '../styles/App.scss';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import Form from './Form';
 import Preview from './Preview';
 import { Route, Switch } from 'react-router-dom';
 import Landing from './Landing';
+import callToApi from '../services/callToApi';
 
 function App() {
   const [stateDesign, setStateDesign] = useState('');
@@ -27,17 +28,17 @@ function App() {
     github: '',
   });
 
-  const [successTrue, setSuccessTrue] = useState({
-    success: false,
-    cardURL: '',
-  });
+  // const [successTrue, setSuccessTrue] = useState({
+  //   success: false,
+  //   cardURL: '',
+  // });
 
   useEffect(() => {
     callToApi(data).then((response) => {
-      setSuccessTrue(...data, {
-        success: response.success,
-        cardURL: response.cardURL,
-      });
+      // setSuccessTrue(...data, {
+      //   success: response.success,
+      //   cardURL: response.cardURL,
+      // });
     });
   }, [data]);
 
