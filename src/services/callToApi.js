@@ -1,9 +1,9 @@
-const callToApi = (props) => {
-    console.log(props);
+const callToApi = (data) => {
+    console.log(data);
     return (
         fetch('https://awesome-profile-cards.herokuapp.com/card', {
             method: 'POST',
-            body: JSON.stringify(props.data),
+            body: JSON.stringify(data),
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -11,6 +11,11 @@ const callToApi = (props) => {
             .then((response) => response.json())
             .then((data) => {
                 console.log(data);
+                const dataFromApi = {
+                    success: data.success,
+                    cardURL: data.cardURL
+                }
+                return dataFromApi;
 
                 // createdCard.classList.remove('hidden');
                 // if (data.success === true) {

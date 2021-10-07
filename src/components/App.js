@@ -27,10 +27,17 @@ function App() {
     github: '',
   });
 
+  const [successTrue, setSuccessTrue] = useState({
+    success: false,
+    cardURL: ''
+  });
+
   useEffect(() => {
     callToApi(data).then(response => {
-      console.log(response);
-
+      setSuccessTrue(...data, {
+        success: response.success,
+        cardURL: response.cardURL
+      })
     })
   }, [data])
 
@@ -115,6 +122,7 @@ function App() {
             handleInput={handleInput}
             handleCollapsable={handleCollapsable}
             handleImage={handleImage}
+            successTrue={successTrue}
           />
         </main>
         <Footer />
