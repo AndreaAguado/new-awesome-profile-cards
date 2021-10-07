@@ -1,10 +1,12 @@
 import '../styles/App.scss';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import Form from './Form';
 import Preview from './Preview';
+
+import callToApi from '../services/callToApi';
 
 function App() {
   const [stateDesign, setStateDesign] = useState('hidden');
@@ -24,6 +26,14 @@ function App() {
     linkedin: '',
     github: '',
   });
+
+  useEffect(() => {
+    callToApi(data).then(response => {
+      console.log(response);
+
+    })
+  }, [data])
+
 
   const handleCollapsable = (id) => {
     const selected = id;

@@ -1,8 +1,11 @@
 import '../styles/layout/Share.scss'
 const Share = (props) => {
- 
+
   const handleClick = (ev) => {
     props.handleCollapsable(ev.currentTarget.id)
+  }
+  const handleShare = (ev) => {
+
   }
   return (
     <fieldset className='share'>
@@ -17,7 +20,7 @@ const Share = (props) => {
       </section>
 
       <section className={props.stateShare}>
-        <button className='share--button'>
+        <button onClick={handleShare} className='share--button'>
           <i className='far fa-id-card'></i>
           <span> Crear tarjeta</span>
         </button>
