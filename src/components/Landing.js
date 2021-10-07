@@ -4,26 +4,41 @@ import LandingButton from './LandingButton';
 
 const Landing = () => {
   return (
-    <section className='landing__hero'>
-      <img className='landing__logo' src={landingLogo} alt='tarjetas-molonas' />
-      <h1 className='landing__title'>Crea tu tarjeta de visita</h1>
-      <p className='landing__paragraf'>
-        Crea mejores contactos profesionales de forma fácil y cómoda
-      </p>
-      <div className='landing__wrapper--icons'>
-        <span className='text__icon'>
-          <i className='far fa-object-ungroup'></i> Diseña
-        </span>
-        <span className='text__icon'>
-          <i className='far fa-keyboard'></i>Rellena
-        </span>
-        <span className='text__icon'>
-          <i className='fas fa-share-alt'></i>Comparte
-        </span>
-      </div>
+    <section class='page'>
+      <article class='main_index'>
+        <img src={landingLogo} alt='Imagen del Logo' class='main__img' />
+        <section class='main__container'>
+          <h1 class='main__tittle'>Crea tu tarjeta de visita</h1>
+          <p class='main__text'>
+            Crea mejores contactos profesionales de forma fácil y cómoda
+          </p>
+        </section>
 
+        <section class='main__section'>
+          <ul class='main__section--ul'>
+            <li class='main__section--ul--li'>
+              <h2 class='main__section--ul--li--tittle'>Diseña</h2>
+              <span class='main__section--ul--li--icon'>
+                <i class='far fa-object-ungroup'></i>
+              </span>
+            </li>
+            <li class='main__section--ul--li'>
+              <h2 class='main__section--ul--li--tittle'>Rellena</h2>
+              <span class='main__section--ul--li--icon'>
+                <i class='far fa-keyboard'></i>
+              </span>
+            </li>
+            <li class='main__section--ul--li'>
+              <h2 class='main__section--ul--li--tittle'>Comparte</h2>
+              <span class='main__section--ul--li--icon'>
+                <i class='fas fa-share-alt'></i>
+              </span>
+            </li>
+          </ul>
+        </section>
+      </article>
       <Link to='/cards'>
-        <LandingButton className='link1' text='COMENZAR'></LandingButton>
+        <LandingButton className='main__botom' text='COMENZAR'></LandingButton>
       </Link>
     </section>
   );

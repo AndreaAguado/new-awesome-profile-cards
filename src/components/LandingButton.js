@@ -1,4 +1,4 @@
 const LandingButton = (props) => {
-  return <button>{props.text}</button>;
+  return <button className='"main__botom'>{props.text}</button>;
 };
 export default LandingButton;
