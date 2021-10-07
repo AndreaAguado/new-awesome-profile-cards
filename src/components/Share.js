@@ -4,8 +4,14 @@ const Share = (props) => {
   const handleClick = (ev) => {
     props.handleCollapsable(ev.currentTarget.id)
   }
+  let classHidden;
   const handleShare = (ev) => {
-
+    if (props.successTrue.success) {
+      return classHidden = '';
+    }
+    else {
+      return classHidden = 'hidden';
+    }
   }
   return (
     <fieldset className='share'>
@@ -25,7 +31,7 @@ const Share = (props) => {
           <span> Crear tarjeta</span>
         </button>
 
-        <div className='hidden'>
+        <div className={classHidden}>
           <section className='creada js-twitter-share'>
             <h3 className='creada--title'>La tarjeta ha sido creada:</h3>
             <p className='creada--p js-card-link'></p>

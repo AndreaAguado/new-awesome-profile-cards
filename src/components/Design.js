@@ -1,8 +1,8 @@
 import '../styles/layout/Design.scss';
 const Design = (props) => {
 
-  const handleChange =(ev) => {
-    props.handleInput(ev.target.id, ev.target.name);
+  const handleChange = (ev) => {
+    props.handleInput(ev.target.value, ev.target.name);
   }
   const handleClick = (ev) => {
     props.handleCollapsable(ev.currentTarget.id)
@@ -24,8 +24,8 @@ const Design = (props) => {
         <div className='radio'>
           <div className='option'>
             <label htmlFor='color'> </label>
-            <input 
-            onChange={handleChange}
+            <input
+              onChange={handleChange}
               id='0'
               type='radio'
               name='palette'
@@ -51,7 +51,7 @@ const Design = (props) => {
 
           <div className='option'>
             <label htmlFor='color'> </label>
-            <input onChange={handleChange} id='2' type='radio' name='palette' value='2' checked={props.checked}/>
+            <input onChange={handleChange} id='2' type='radio' name='palette' value='2' checked={props.checked} />
             <div className='colors-container'>
               <div className='colors-container__color slate'></div>
               <div className='colors-container__color faded_orange'></div>
