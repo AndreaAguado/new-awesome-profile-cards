@@ -85,12 +85,25 @@ function App() {
     console.log('img', file);
   };
   console.log(data);
+
+  const handleReset = () => {
+    setData({
+      palette: '0',
+      name: '',
+      job: '',
+      photo: '',
+      phone: '',
+      email: '',
+      linkedin: '',
+      github: '',
+    })
+  }
   return (
     <div>
       <div className='page_interactive'>
         <Header />
         <main className='main_interactive'>
-          <Preview data={data} />
+          <Preview data={data} handleReset={handleReset} />
           <Form
             data={data}
             stateDesign={stateDesign}
