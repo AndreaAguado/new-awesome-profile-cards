@@ -9,7 +9,7 @@ import Preview from './Preview';
 import callToApi from '../services/callToApi';
 
 function App() {
-  const [stateDesign, setStateDesign] = useState('hidden');
+  const [stateDesign, setStateDesign] = useState('');
   const [stateFill, setStateFill] = useState('hidden');
   const [stateShare, setStateShare] = useState('hidden');
 
