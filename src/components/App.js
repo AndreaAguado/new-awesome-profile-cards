@@ -1,12 +1,12 @@
 import '../styles/App.scss';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import Form from './Form';
 import Preview from './Preview';
-
-import callToApi from '../services/callToApi';
+import { Route, Switch } from 'react-router-dom';
+import Landing from './Landing';
 
 function App() {
   const [stateDesign, setStateDesign] = useState('hidden');
@@ -26,14 +26,6 @@ function App() {
     linkedin: '',
     github: '',
   });
-
-  useEffect(() => {
-    callToApi(data).then(response => {
-      console.log(response);
-
-    })
-  }, [data])
-
 
   const handleCollapsable = (id) => {
     const selected = id;
@@ -85,40 +77,34 @@ function App() {
     console.log('img', file);
   };
   console.log(data);
-
-  const handleReset = () => {
-    setData({
-      palette: '0',
-      name: '',
-      job: '',
-      photo: '',
-      phone: '',
-      email: '',
-      linkedin: '',
-      github: '',
-    })
-  }
   return (
     <div>
-      <div className='page_interactive'>
-        <Header />
-        <main className='main_interactive'>
-          <Preview data={data} handleReset={handleReset} />
-          <Form
-            data={data}
-            stateDesign={stateDesign}
-            arrowDesign={arrowDesign}
-            stateFill={stateFill}
-            arrowFill={arrowFill}
-            stateShare={stateShare}
-            arrowShare={arrowShare}
-            handleInput={handleInput}
-            handleCollapsable={handleCollapsable}
-            handleImage={handleImage}
-          />
-        </main>
-        <Footer />
-      </div>
+      <Switch>
+        <Route exact path='/'>
+          <Landing />
+        </Route>
+        <Route exact path='/cards'>
+          <div className='page_interactive'>
+            <Header />
+            <main className='main_interactive'>
+              <Preview data={data} />
+              <Form
+                data={data}
+                stateDesign={stateDesign}
+                arrowDesign={arrowDesign}
+                stateFill={stateFill}
+                arrowFill={arrowFill}
+                stateShare={stateShare}
+                arrowShare={arrowShare}
+                handleInput={handleInput}
+                handleCollapsable={handleCollapsable}
+                handleImage={handleImage}
+              />
+            </main>
+            <Footer />
+          </div>
+        </Route>
+      </Switch>
     </div>
   );
 }

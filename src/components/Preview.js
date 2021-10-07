@@ -2,7 +2,7 @@ const Preview = (props) => {
   return (
     <section className='card__first__view'>
       <div className='card__result'>
-        <button onClick={props.handleReset} className='button__reset'>
+        <button className='button__reset'>
           <i className='far fa-trash-alt'></i> reset
         </button>
 

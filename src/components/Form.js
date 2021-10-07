@@ -4,7 +4,7 @@ import Fill from './Fill';
 import Share from './Share';
 const Form = (props) => {
   return (
-    <form onSubmit={(ev) => { ev.preventDefault() }} className='form'>
+    <form className='form'>
       <section className='select'>
         <Design
           data={props.data}

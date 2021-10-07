@@ -58,7 +58,10 @@ const Fill = (props) => {
           </label>
 
           <label className='fill__photo--upload-btn' htmlFor='img-selector'>
-            <ImageReader handleImage={props.handleImage} />
+            <ImageReader
+              handleImage={props.handleImage}
+              style={{ backgroundImage: `url(${props.data.photo})` }}
+            />
             Añadir imagen
           </label>
           {/* <input
