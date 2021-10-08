@@ -36,10 +36,14 @@ const Landing = () => {
             </li>
           </ul>
         </section>
+
+        <Link to='/cards'>
+          <LandingButton
+            className='main__botom'
+            text='COMENZAR'
+          ></LandingButton>
+        </Link>
       </article>
-      <Link to='/cards'>
-        <LandingButton className='main__botom' text='COMENZAR'></LandingButton>
-      </Link>
     </section>
   );
 };
