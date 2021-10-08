@@ -27,6 +27,10 @@ const Form = (props) => {
           arrowShare={props.arrowShare}
           handleInput={props.handleInput}
           handleCollapsable={props.handleCollapsable}
+          error={props.error}
+          success={props.success}
+          setError={props.setError}
+          setSuccess={props.setSuccess}
         />
       </section>
     </form>

@@ -1,12 +1,11 @@
 import '../styles/layout/Design.scss';
 const Design = (props) => {
-
   const handleChange = (ev) => {
     props.handleInput(ev.target.value, ev.target.name);
-  }
+  };
   const handleClick = (ev) => {
-    props.handleCollapsable(ev.currentTarget.id)
-  }
+    props.handleCollapsable(ev.currentTarget.id);
+  };
   return (
     <fieldset className='desing'>
       <section
@@ -30,7 +29,7 @@ const Design = (props) => {
               type='radio'
               name='palette'
               value='0'
-              checked={props.checked}
+              checked={props.data.palette === '0'}
             />
             <div className='colors-container'>
               <div className='colors-container__color dark_green_blue'></div>
@@ -41,7 +40,14 @@ const Design = (props) => {
 
           <div className='option'>
             <label htmlFor='color'> </label>
-            <input onChange={handleChange} id='1' type='radio' name='palette' value='1' checked={props.checked} />
+            <input
+              onChange={handleChange}
+              id='1'
+              type='radio'
+              name='palette'
+              value='1'
+              checked={props.data.palette === '1'}
+            />
             <div className='colors-container'>
               <div className='colors-container__color dried_blood'></div>
               <div className='colors-container__color rusty_red'></div>
@@ -51,7 +57,14 @@ const Design = (props) => {
 
           <div className='option'>
             <label htmlFor='color'> </label>
-            <input onChange={handleChange} id='2' type='radio' name='palette' value='2' checked={props.checked} />
+            <input
+              onChange={handleChange}
+              id='2'
+              type='radio'
+              name='palette'
+              value='2'
+              checked={props.data.palette === '2'}
+            />
             <div className='colors-container'>
               <div className='colors-container__color slate'></div>
               <div className='colors-container__color faded_orange'></div>

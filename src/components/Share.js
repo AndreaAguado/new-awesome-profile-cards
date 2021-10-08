@@ -1,18 +1,45 @@
-import '../styles/layout/Share.scss'
+import '../styles/layout/Share.scss';
+import { useState } from 'react';
 const Share = (props) => {
-
+  const [errorHidden, setErrorHidden] = useState('hidden');
+  const [sucessHidden, setSuccessHidden] = useState('hidden');
   const handleClick = (ev) => {
-    props.handleCollapsable(ev.currentTarget.id)
-  }
-  let classHidden;
-  const handleShare = (ev) => {
-    if (props.successTrue.success) {
-      return classHidden = '';
-    }
-    else {
-      return classHidden = 'hidden';
-    }
-  }
+    props.handleCollapsable(ev.currentTarget.id);
+  };
+  // let classHidden = 'hidden';
+  // const handleShare = (ev) => {
+  //   if (props.successTrue.success) {
+  //     return (classHidden = '');
+  //   } else {
+  //     return (classHidden = 'hidden');
+  //   }
+  // };
+  const handleCreate = (ev) => {
+    ev.preventDefault();
+    fetch('https://awesome-profile-cards.herokuapp.com/card', {
+      method: 'POST',
+      body: JSON.stringify(props.data),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        if (data.success === false) {
+          props.setError(data.error);
+          setErrorHidden('');
+          setSuccessHidden('hidden');
+          // props.setSuccess('');
+        } else if (data.success === true) {
+          props.setSuccess(data.cardURL);
+          setSuccessHidden('');
+          setErrorHidden('hidden');
+          // props.setError('')
+        }
+      });
+  };
+
   return (
     <fieldset className='share'>
       <section
@@ -26,15 +53,22 @@ const Share = (props) => {
       </section>
 
       <section className={props.stateShare}>
-        <button onClick={handleShare} className='share--button'>
+        <button onClick={handleCreate} className='share--button'>
           <i className='far fa-id-card'></i>
           <span> Crear tarjeta</span>
         </button>
 
-        <div className={classHidden}>
-          <section className='creada js-twitter-share'>
+        <div>
+          <section className={` js-twitter-share ${sucessHidden}`}>
             <h3 className='creada--title'>La tarjeta ha sido creada:</h3>
-            <p className='creada--p js-card-link'></p>
+            <a
+              className='creada--p js-card-link'
+              href={props.success}
+              target='_blank'
+              rel='noreferrer'
+            >
+              Pinche aquí amig@ {props.data.name} !!!!!!!!!
+            </a>
             {/* <!-- pendiente hacerlo interactivo --> */}
             <button className='creada--button'>
               <i className='fab fa-twitter'></i>
@@ -42,7 +76,9 @@ const Share = (props) => {
             </button>
           </section>
           <div>
-            <p className='js-hidden-box'>Necesita rellenar todos los campos</p>
+            <p className={`js-hidden-box ${errorHidden}`}>
+              Rellene los campos necesarios
+            </p>
           </div>
         </div>
       </section>

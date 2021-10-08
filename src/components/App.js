@@ -17,6 +17,9 @@ function App() {
   const [arrowDesign, setArrowDesign] = useState('');
   const [arrowFill, setArrowFill] = useState('');
   const [arrowShare, setArrowShare] = useState('');
+  const [success, setSuccess] = useState('');
+
+  const [error, setError] = useState('');
   const [data, setData] = useState({
     palette: '0',
     name: '',
@@ -28,14 +31,14 @@ function App() {
     github: '',
   });
 
-  useEffect(() => {
-    callToApi(data).then((response) => {
-      // setSuccessTrue(...data, {
-      //   success: response.success,
-      //   cardURL: response.cardURL,
-      // });
-    });
-  }, [data]);
+  // useEffect(() => {
+  //   callToApi(data).then((response) => {
+  //     // setSuccessTrue(...data, {
+  //     //   success: response.success,
+  //     //   cardURL: response.cardURL,
+  //     // });
+  //   });
+  // }, [data]);
 
   const handleCollapsable = (id) => {
     const selected = id;
@@ -109,6 +112,10 @@ function App() {
                 handleInput={handleInput}
                 handleCollapsable={handleCollapsable}
                 handleImage={handleImage}
+                error={error}
+                success={success}
+                setError={setError}
+                setSuccess={setSuccess}
               />
             </main>
             <Footer />
