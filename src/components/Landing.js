@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import landingLogo from '../images/awesome-logo-card.png';
+import Footer from './Footer';
 import LandingButton from './LandingButton';
 
 const Landing = () => {
@@ -44,6 +45,7 @@ const Landing = () => {
           ></LandingButton>
         </Link>
       </article>
+      <Footer />
     </section>
   );
 };
