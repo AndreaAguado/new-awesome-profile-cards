@@ -64,16 +64,11 @@ const Fill = (props) => {
             />
             Añadir imagen
           </label>
-          {/* <input
-            type='file'
-            name='photo'
-            id='img-selector'
-            className='fill__photo--hiddenField'
-          /> */}
-
-          <div className='fill__photo--preview'></div>
+          <div
+            className='fill__photo--preview '
+            style={{ backgroundImage: `url(${props.data.photo})` }}
+          ></div>
         </div>
-
         <div className='fill__media'>
           <label htmlFor='email' className='fill__label'>
             Email<span className='fill__label--asterisk'>*</span>
