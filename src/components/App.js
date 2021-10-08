@@ -30,7 +30,18 @@ function App() {
     linkedin: '',
     github: '',
   });
-
+  const handleReset = () => {
+    setData({
+      palette: '0',
+      name: '',
+      job: '',
+      photo: '',
+      phone: '',
+      email: '',
+      linkedin: '',
+      github: '',
+    });
+  };
   // useEffect(() => {
   //   callToApi(data).then((response) => {
   //     // setSuccessTrue(...data, {
@@ -100,7 +111,7 @@ function App() {
           <div className='page_interactive'>
             <Header />
             <main className='main_interactive'>
-              <Preview data={data} />
+              <Preview data={data} handleReset={handleReset} />
               <Form
                 data={data}
                 stateDesign={stateDesign}
