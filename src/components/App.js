@@ -28,19 +28,14 @@ function App() {
     github: '',
   });
 
-  const [successTrue, setSuccessTrue] = useState({
-    success: false,
-    cardURL: '',
-  });
-
-  // useEffect(() => {
-  //   callToApi(data).then((response) => {
-  //     setSuccessTrue(...data, {
-  //       success: response.success,
-  //       cardURL: response.cardURL,
-  //     });
-  //   });
-  // }, [data]);
+  useEffect(() => {
+    callToApi(data).then((response) => {
+      // setSuccessTrue(...data, {
+      //   success: response.success,
+      //   cardURL: response.cardURL,
+      // });
+    });
+  }, [data]);
 
   const handleCollapsable = (id) => {
     const selected = id;

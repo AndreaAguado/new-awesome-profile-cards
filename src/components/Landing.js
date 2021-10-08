@@ -4,34 +4,34 @@ import LandingButton from './LandingButton';
 
 const Landing = () => {
   return (
-    <section class='page'>
-      <article class='main_index'>
-        <img src={landingLogo} alt='Imagen del Logo' class='main__img' />
-        <section class='main__container'>
-          <h1 class='main__tittle'>Crea tu tarjeta de visita</h1>
-          <p class='main__text'>
+    <section className='page'>
+      <article className='main_index'>
+        <img src={landingLogo} alt='Imagen del Logo' className='main__img' />
+        <section className='main__container'>
+          <h1 className='main__tittle'>Crea tu tarjeta de visita</h1>
+          <p className='main__text'>
             Crea mejores contactos profesionales de forma fácil y cómoda
           </p>
         </section>
 
-        <section class='main__section'>
-          <ul class='main__section--ul'>
-            <li class='main__section--ul--li'>
-              <h2 class='main__section--ul--li--tittle'>Diseña</h2>
-              <span class='main__section--ul--li--icon'>
-                <i class='far fa-object-ungroup'></i>
+        <section className='main__section'>
+          <ul className='main__section--ul'>
+            <li className='main__section--ul--li'>
+              <h2 className='main__section--ul--li--tittle'>Diseña</h2>
+              <span className='main__section--ul--li--icon'>
+                <i className='far fa-object-ungroup'></i>
               </span>
             </li>
-            <li class='main__section--ul--li'>
-              <h2 class='main__section--ul--li--tittle'>Rellena</h2>
-              <span class='main__section--ul--li--icon'>
-                <i class='far fa-keyboard'></i>
+            <li className='main__section--ul--li'>
+              <h2 className='main__section--ul--li--tittle'>Rellena</h2>
+              <span className='main__section--ul--li--icon'>
+                <i className='far fa-keyboard'></i>
               </span>
             </li>
-            <li class='main__section--ul--li'>
-              <h2 class='main__section--ul--li--tittle'>Comparte</h2>
-              <span class='main__section--ul--li--icon'>
-                <i class='fas fa-share-alt'></i>
+            <li className='main__section--ul--li'>
+              <h2 className='main__section--ul--li--tittle'>Comparte</h2>
+              <span className='main__section--ul--li--icon'>
+                <i className='fas fa-share-alt'></i>
               </span>
             </li>
           </ul>
