@@ -3,7 +3,7 @@ import logo from '../images/awesome-logo-card.png';
 const Header = () => {
   return (
     <header className='header'>
-      <a href={'./index.html'} target='_blank' rel='noreferrer'>
+      <a href={'./index.html'}>
         <img src={logo} alt='Awesome profile cards' className='header__img' />
       </a>
     </header>
