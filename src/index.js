@@ -3,6 +3,7 @@
 // Importamos los dos módulos de NPM necesarios para trabajar
 const express = require("express");
 const cors = require("cors");
+const card = require("./data/data.json");
 
 // Creamos el servidor
 const server = express();
@@ -11,15 +12,19 @@ const server = express();
 server.use(cors());
 server.use(express.json());
 
-// Arrancamos el servidor en el puerto 3000
-const serverPort = 3000;
+// Arrancamos el servidor en el puerto 4000
+const serverPort = 4000;
 server.listen(serverPort, () => {
     console.log(`Server listening at http://localhost:${serverPort}`);
 });
 
 // Escribimos los endpoints que queramos
-server.get("/card", (req, res) => {
-    const response = {
-    };
-    res.json(response);
+server.post("/card", (req, res) => {
+    if (!card) {
+        res.sendStatus('Error 404');
+    }
+    else {
+        res.json(card);
+    }
+
 });

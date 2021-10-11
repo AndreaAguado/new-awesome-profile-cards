@@ -16,7 +16,7 @@ const Share = (props) => {
   // };
   const handleCreate = (ev) => {
     ev.preventDefault();
-    fetch('https://awesome-profile-cards.herokuapp.com/card', {
+    fetch('http://localhost:4000/card', {
       method: 'POST',
       body: JSON.stringify(props.data),
       headers: {
