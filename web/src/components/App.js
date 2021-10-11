@@ -7,7 +7,7 @@ import Form from './Form';
 import Preview from './Preview';
 import { Route, Switch } from 'react-router-dom';
 import Landing from './Landing';
-import callToApi from '../services/callToApi';
+import localStorage from '../services/localStorage';
 
 function App() {
   const [stateDesign, setStateDesign] = useState('');
@@ -20,7 +20,7 @@ function App() {
   const [success, setSuccess] = useState('');
 
   const [error, setError] = useState('');
-  const [data, setData] = useState({
+  const defaultData = {
     palette: '0',
     name: '',
     job: '',
@@ -29,7 +29,11 @@ function App() {
     email: '',
     linkedin: '',
     github: '',
-  });
+  };
+  const [data, setData] = useState(localStorage.get('data') !== undefined ? localStorage.get('data') : defaultData);
+
+  localStorage.set('data', data);
+
   const handleReset = () => {
     setData({
       palette: '0',
@@ -42,14 +46,8 @@ function App() {
       github: '',
     });
   };
-  // useEffect(() => {
-  //   callToApi(data).then((response) => {
-  //     // setSuccessTrue(...data, {
-  //     //   success: response.success,
-  //     //   cardURL: response.cardURL,
-  //     // });
-  //   });
-  // }, [data]);
+
+
 
   const handleCollapsable = (id) => {
     const selected = id;
