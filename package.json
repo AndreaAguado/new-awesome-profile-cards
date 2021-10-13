@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/index.js"
+    "start": "nodemon src/index.js",
+    "publish": "cd web && npm run build && cd .. && rm -rf ./public ; mv ./web/build ./public"
   },
   "repository": {
     "type": "git",

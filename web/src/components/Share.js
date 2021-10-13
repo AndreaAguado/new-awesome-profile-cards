@@ -24,15 +24,15 @@ const Share = (props) => {
       },
     })
       .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        if (data.success === false) {
-          props.setError(data.error);
+      .then((fetchResponse) => {
+        console.log(fetchResponse);
+        if (fetchResponse.success === false) {
+          props.setError(fetchResponse.error);
           setErrorHidden('');
           setSuccessHidden('hidden');
           // props.setSuccess('');
-        } else if (data.success === true) {
-          props.setSuccess(data.cardURL);
+        } else if (fetchResponse.success === true) {
+          props.setSuccess(fetchResponse.cardURL);
           setSuccessHidden('');
           setErrorHidden('hidden');
           // props.setError('')
