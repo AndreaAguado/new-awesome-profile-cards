@@ -77,7 +77,7 @@ const Share = (props) => {
           </section>
           <div>
             <p className={`js-hidden-box ${errorHidden}`}>
-              Rellene los campos necesarios
+              {props.error}
             </p>
           </div>
         </div>

@@ -20,11 +20,35 @@ server.listen(serverPort, () => {
 
 // Escribimos los endpoints que queramos
 server.post("/card", (req, res) => {
-    if (!card) {
-        res.sendStatus('Error 404');
+    console.log(req.body.name);
+    const response = {}
+    if (req.body.name === '') {
+        response.success = false;
+        response.error = 'El campo Nombre es incorrecto';
+    }
+    else if (req.body.job === '') {
+        response.success = false;
+        response.error = 'El campo Puesto es incorrecto';
+    }
+    else if (req.body.email === '') {
+        response.success = false;
+        response.error = 'El campo email es incorrecto';
+    }
+    else if (req.body.linkedin === '') {
+        response.success = false;
+        response.error = 'El campo Linkedin es incorrecto';
+    }
+    else if (req.body.github === '') {
+        response.success = false;
+        response.error = 'El campo Github es incorrecto';
+    }
+    else if (req.body.photo === '') {
+        response.success = false;
+        response.error = 'Falta seleccionar una imagen';
     }
     else {
-        res.json(card);
+        response.success = true;
+        response.cardURL = 'https://awesome-profile-cards.herokuapp.com/card/19591613152820696';
     }
-
+    res.json(response);
 });
