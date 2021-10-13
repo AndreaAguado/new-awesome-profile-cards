@@ -18,6 +18,9 @@ server.listen(serverPort, () => {
     console.log(`Server listening at http://localhost:${serverPort}`);
 });
 
+const staticServerPathWeb = "./public"; // En esta carpeta ponemos los ficheros estáticos
+server.use(express.static(staticServerPathWeb));
+
 // Escribimos los endpoints que queramos
 server.post("/card", (req, res) => {
     console.log(req.body.name);
