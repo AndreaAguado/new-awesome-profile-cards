@@ -1,0 +1,99 @@
+.card__example {
+  padding-top: 2px;
+  width: 240px;
+  overflow: hidden;
+  height: 329px;
+  background-color: white;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.35);
+  border-radius: 2px;
+}
+.text__section {
+  text-transform: capitalize;
+  margin-top: 15px;
+  line-height: 1.4;
+}
+.name__card {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  margin-left: 20px;
+  margin-top: 15px;
+}
+
+.job__name {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  margin-left: 20px;
+}
+
+.photo__example {
+  margin-top: 15px;
+  background-position: center;
+  background-size: cover;
+  background-image: url('../../images/jessicawalsh.jpg');
+}
+.photo__example--logo {
+  width: 240px;
+  height: 200px;
+}
+
+.link__section {
+  margin-left: 20px;
+}
+
+.circle__awesome {
+  font-size: 18px;
+  display: inline-block;
+  text-align: center;
+  margin-top: 5px;
+  margin-left: 5px;
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  line-height: 1.6;
+}
+
+.palette_0.color_text {
+  color: #114e4e;
+}
+.palette_0.color_job {
+  color: #a2deaf;
+}
+.palette_0.color_line {
+  border-left: solid 5px #438792;
+}
+.palette_0.color_circle {
+  color: #438792;
+  border: solid 2px #a2deaf;
+}
+
+.palette_1.color_text {
+  color: #420101;
+}
+.palette_1.color_job {
+  color: #e95626;
+}
+.palette_1.color_line {
+  border-left: solid 5px #bd1010;
+}
+.palette_1.color_circle {
+  color: #bd1010;
+  border: solid 2px #e95626;
+}
+
+.palette_2.color_text {
+  color: #3e5b65;
+}
+.palette_2.color_job {
+  color: #a0c0cf;
+}
+.palette_2.color_line {
+  border-left: solid 5px #eab052;
+}
+.palette_2.color_circle {
+  color: #eab052;
+  border: solid 2px #a0c0cf;
+}
