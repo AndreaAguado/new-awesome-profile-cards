@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <link rel="stylesheet" href="../main.css" />
     <title>Card</title>
 </head>
@@ -23,7 +24,7 @@
         </div>
 
         <div class="photo__example">
-            <div style="background-image:url(<%= photo %>)" alt="yourlogo" title="yourlogo"
+            <div style="background-image:url('<%= photo %>')" alt="yourlogo" title="yourlogo"
                 class="photo__example--logo profile__image"></div>
         </div>
 
@@ -41,8 +42,8 @@
                 <i class="fab fa-linkedin-in"></i>
             </a>
 
-            <a class="circle__awesome color_circle" href="https://github.com/<%=github%>" title="<%=github%>"
-                target="_blank">
+            <a class="circle__awesome color_circle <%=palette%>" href="https://github.com/<%=github%>"
+                title="<%=github%>" target="_blank">
                 <i class="fab fa-github-alt"></i>
             </a>
         </div>
