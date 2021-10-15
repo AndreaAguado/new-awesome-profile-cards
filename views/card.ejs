@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../main.css" />
+    <title>Card</title>
+</head>
+
+<body>
+
+    <div class="card__example palette_<%=palette%>">
+        <div class="text__section color_line">
+            <h3 class="name__card color_text">
+                <%=name%>
+
+            </h3>
+            <h4 class="job__name color_job">
+                <%=job%>
+            </h4>
+        </div>
+
+        <div class="photo__example">
+            <div style="background-image:url(<%= photo %>)" alt="yourlogo" title="yourlogo"
+                class="photo__example--logo profile__image"></div>
+        </div>
+
+        <div class="link__section">
+            <a class="circle__awesome color_circle" href="tel: <%=phone%>" title="<%=phone%>" target="_blank">
+                <i class="fas fa-mobile-alt"></i>
+            </a>
+
+            <a class="circle__awesome color_circle" href="mailto: <%=email%>" title="<%=email%>" target="_blank">
+                <i class="far fa-envelope"></i>
+            </a>
+
+            <a class="circle__awesome color_circle" href="https://www.linkedin.com/in/<%=linkedin%>"
+                title="<%=linkedin%>" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+
+            <a class="circle__awesome color_circle" href="https://github.com/<%=github%>" title="<%=github%>"
+                target="_blank">
+                <i class="fab fa-github-alt"></i>
+            </a>
+        </div>
+    </div>
+
+</body>
+
+</html>
