@@ -1,3 +1,11 @@
+.body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: pink;
+}
 .card__example {
   padding-top: 2px;
   width: 240px;
@@ -15,29 +23,33 @@
   line-height: 1.4;
 }
 .name__card {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 18px;
   margin-left: 20px;
   margin-top: 15px;
+  margin-bottom: 0;
 }
 
 .job__name {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 16px;
   margin-left: 20px;
+  margin-top: 0;
 }
 
 .photo__example {
   margin-top: 15px;
   background-position: center;
   background-size: cover;
-  background-image: url('../../images/jessicawalsh.jpg');
+  /* background-image: url("../../images/jessicawalsh.jpg"); */
 }
 .photo__example--logo {
   width: 240px;
   height: 200px;
+  background-position: center;
+  background-size: cover;
 }
 
 .link__section {
@@ -52,8 +64,8 @@
   margin-left: 5px;
   width: 32px;
   height: 32px;
-  border-radius: 16px;
-  line-height: 1.6;
+  border-radius: 50%;
+  line-height: 1.8em;
 }
 
 .palette_0.color_text {

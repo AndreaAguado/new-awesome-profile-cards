@@ -20,6 +20,15 @@ server.listen(serverPort, () => {
 });
 
 // Escribimos los endpoints que queramos
+
+server.get('/card/:id', (req, res) => {
+  console.log(req.params.id);
+  const query = db.prepare('SELECT * FROM cards WHERE id=?');
+  const data = query.get(req.params.id);
+  // hacemos consulta en la base de datos y los pintamos desde la bbdd de 'card', con los datos de data
+  res.render('card', data);
+});
+
 server.post('/card', (req, res) => {
   console.log(req.body.name);
   const response = {};
@@ -42,19 +51,22 @@ server.post('/card', (req, res) => {
     response.success = false;
     response.error = 'Falta seleccionar una imagen';
   } else {
+    const query = db.prepare('INSERT INTO cards (palette, name, job, photo, github, phone, linkedin, email) VALUES (?, ?, ? ,? , ?, ?, ?, ?)');
+    const dataToImport = query.run(req.body.palette, req.body.name, req.body.job, req.body.photo, req.body.github, req.body.phone, req.body.linkedin, req.body.email);
     response.success = true;
-    response.cardURL =
-      'https://awesome-profile-cards.herokuapp.com/card/19591613152820696';
+    response.cardURL = `http://localhost:4000/card/${dataToImport.lastInsertRowid}`;
   }
   res.json(response);
 });
 
-server.get('/card/:id', (req, res) => {
-  const query = db.prepare('SELECT * FROM cards WHERE id=?');
-  const data = query.get(req.params.id);
-  // hacemos consulta en la base de datos y los pintamos desde la bbdd de 'card', con los datos de data
-  res.render('card', data);
-});
+
+
+// server.post('/card/:id', (req, res) => {
+//   const query = db.prepare('INSERT INTO card (palette, name, job, photo, github, phone, linkedin, email) VALUES (?, ?, ? ,? , ?, ?, ?, ?)');
+//   const dataToImport = query.run(req.body.palette, req.body.name, req.body.job, req.body.photo, req.body.github, req.body.phone, req.body.linkedin, req.body.email);
+
+//   res.render('card', dataToImport);
+// })
 
 const staticServerPathWeb = './public';
 server.use(express.static(staticServerPathWeb));
