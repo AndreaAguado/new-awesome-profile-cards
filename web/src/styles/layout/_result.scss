@@ -1,7 +1,8 @@
 .card__first__view {
   min-width: 320px;
   min-height: 457px;
-  background: linear-gradient($silver, $palegrey);
+  // background: linear-gradient($silver, $palegrey);
+  background-image: linear-gradient(180deg, #48e45a, #1a4270);
   display: flex;
   flex-direction: column;
   align-items: center;
