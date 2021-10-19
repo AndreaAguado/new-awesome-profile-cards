@@ -1,8 +1,7 @@
 .card__first__view {
   min-width: 320px;
   min-height: 457px;
-  // background: linear-gradient($silver, $palegrey);
-  background-image: linear-gradient(180deg, #48e45a, #1a4270);
+  background-image: linear-gradient(180deg, #e44884c0, #6390c4fd);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,7 +10,6 @@
     margin-right: 40px;
     margin-top: 20px;
     margin-bottom: 10px;
-    // height: 100%;
     border-radius: 6px;
     justify-content: center;
     align-items: center;
@@ -33,6 +31,7 @@
     font-size: 12px;
     margin-top: 38px;
     color: $gunmetal;
+    color: white;
 
     @include tablet {
       margin-right: 170px;

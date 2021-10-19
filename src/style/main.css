@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: pink;
+  background-image: linear-gradient(180deg, #e44884c0, #6390c4fd);
 }
 .card__example {
   padding-top: 2px;
