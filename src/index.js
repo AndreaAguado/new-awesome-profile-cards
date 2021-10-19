@@ -14,7 +14,7 @@ server.use(cors());
 server.use(express.json());
 server.set('view engine', 'ejs');
 // Arrancamos el servidor en el puerto 4000
-const serverPort = 4000;
+const serverPort = process.env.PORT || 4000;
 server.listen(serverPort, () => {
   console.log(`Server listening at http://localhost:${serverPort}`);
 });

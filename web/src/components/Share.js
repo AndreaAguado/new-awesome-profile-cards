@@ -16,7 +16,7 @@ const Share = (props) => {
   // };
   const handleCreate = (ev) => {
     ev.preventDefault();
-    fetch('http://localhost:4000/card', {
+    fetch('/card', {
       method: 'POST',
       body: JSON.stringify(props.data),
       headers: {
