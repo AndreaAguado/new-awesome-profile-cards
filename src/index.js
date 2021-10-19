@@ -12,6 +12,7 @@ const db = new DataBase('./src/data/database.db', { verbose: console.log });
 // Configuramos el servidor
 server.use(cors());
 server.use(express.json());
+server.use(express.json({ limit: '50mb' }))
 server.set('view engine', 'ejs');
 // Arrancamos el servidor en el puerto 4000
 const serverPort = process.env.PORT || 4000;
@@ -56,7 +57,7 @@ server.post('/card', (req, res) => {
     console.log(dataComprobation.id);
     if (dataComprobation !== undefined) {
       response.success = true;
-      response.cardURL = `http://localhost:4000/card/${dataComprobation.id}`;
+      response.cardURL = `https://sqlito-johnson.herokuapp.com/card/${dataComprobation.id}`;
     }
     else {
       const query = db.prepare('INSERT INTO cards (palette, name, job, photo, github, phone, linkedin, email) VALUES (?, ?, ? ,? , ?, ?, ?, ?)');
