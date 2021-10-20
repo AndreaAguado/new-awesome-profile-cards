@@ -68,17 +68,17 @@ const Share = (props) => {
               Pinche aquí amig@ {props.data.name} !!!!!!!!!
             </a>
             {/* <!-- pendiente hacerlo interactivo --> */}
-            <button className='creada--button' onClick={handleTwitter}>
+            <div className='divClass'>
               <a
                 className='linkTwitter'
                 target='blank'
-                href={`https://twitter.com/intent/tweet?text= Mi tarjeta profesional 👩🏻‍💻 ¡Contáctame! 💌 &hashtags=Adalabers,JavaScript,PromoNerea,team5'&url=${twitter}`}
+                href={`https://twitter.com/intent/tweet?text= Mi tarjeta profesional 👩🏻‍💻 ¡Contáctame! 💌 &url=${props.success}`}
                 // href={`https:twitter.com/intent/tweet?url=${props.success}`}
               >
                 <i className='fab fa-twitter'></i>
                 <span className='span'>Compartir en twitter</span>{' '}
               </a>
-            </button>
+            </div>
           </section>
           <div>
             <p className={`js-hidden-box ${errorHidden}`}>{props.error}</p>
