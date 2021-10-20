@@ -1,6 +1,6 @@
 import '../styles/App.scss';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import Form from './Form';
@@ -13,12 +13,10 @@ function App() {
   const [stateDesign, setStateDesign] = useState('');
   const [stateFill, setStateFill] = useState('hidden');
   const [stateShare, setStateShare] = useState('hidden');
-
   const [arrowDesign, setArrowDesign] = useState('');
   const [arrowFill, setArrowFill] = useState('');
   const [arrowShare, setArrowShare] = useState('');
   const [success, setSuccess] = useState('');
-
   const [error, setError] = useState('');
   const defaultData = {
     palette: '0',
@@ -30,7 +28,11 @@ function App() {
     linkedin: '',
     github: '',
   };
-  const [data, setData] = useState(localStorage.get('data') !== undefined ? localStorage.get('data') : defaultData);
+  const [data, setData] = useState(
+    localStorage.get('data') !== undefined
+      ? localStorage.get('data')
+      : defaultData
+  );
 
   localStorage.set('data', data);
 
@@ -46,8 +48,6 @@ function App() {
       github: '',
     });
   };
-
-
 
   const handleCollapsable = (id) => {
     const selected = id;

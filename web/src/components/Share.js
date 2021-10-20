@@ -3,17 +3,11 @@ import { useState } from 'react';
 const Share = (props) => {
   const [errorHidden, setErrorHidden] = useState('hidden');
   const [sucessHidden, setSuccessHidden] = useState('hidden');
+  const [twitter, setTwitter] = useState('');
+
   const handleClick = (ev) => {
     props.handleCollapsable(ev.currentTarget.id);
   };
-  // let classHidden = 'hidden';
-  // const handleShare = (ev) => {
-  //   if (props.successTrue.success) {
-  //     return (classHidden = '');
-  //   } else {
-  //     return (classHidden = 'hidden');
-  //   }
-  // };
   const handleCreate = (ev) => {
     ev.preventDefault();
     fetch('/card', {
@@ -26,6 +20,7 @@ const Share = (props) => {
       .then((response) => response.json())
       .then((fetchResponse) => {
         console.log(fetchResponse);
+        setTwitter(fetchResponse.cardURL);
         if (fetchResponse.success === false) {
           props.setError(fetchResponse.error);
           setErrorHidden('');
@@ -33,13 +28,13 @@ const Share = (props) => {
           // props.setSuccess('');
         } else if (fetchResponse.success === true) {
           props.setSuccess(fetchResponse.cardURL);
+          setTwitter(fetchResponse.cardURL);
           setSuccessHidden('');
           setErrorHidden('hidden');
           // props.setError('')
         }
       });
   };
-
   return (
     <fieldset className='share'>
       <section
@@ -71,14 +66,19 @@ const Share = (props) => {
             </a>
             {/* <!-- pendiente hacerlo interactivo --> */}
             <button className='creada--button'>
-              <i className='fab fa-twitter'></i>
-              <span className='span'>Compartir en twitter</span>
+              <a
+                className='linkTwitter'
+                target='blank'
+                href={`https://twitter.com/intent/tweet?text= Mi tarjeta profesional 👩🏻‍💻 ¡Contáctame! 💌 &hashtags=Adalabers,JavaScript,PromoNerea,team5'&url=${twitter}`}
+                // href={`https:twitter.com/intent/tweet?url=${props.success}`}
+              >
+                <i className='fab fa-twitter'></i>
+                <span className='span'>Compartir en twitter</span>{' '}
+              </a>
             </button>
           </section>
           <div>
-            <p className={`js-hidden-box ${errorHidden}`}>
-              {props.error}
-            </p>
+            <p className={`js-hidden-box ${errorHidden}`}>{props.error}</p>
           </div>
         </div>
       </section>
