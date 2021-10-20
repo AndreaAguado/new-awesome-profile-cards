@@ -3,8 +3,6 @@ import { useState } from 'react';
 const Share = (props) => {
   const [errorHidden, setErrorHidden] = useState('hidden');
   const [sucessHidden, setSuccessHidden] = useState('hidden');
-  const [twitter, setTwitter] = useState('');
-
   const handleClick = (ev) => {
     props.handleCollapsable(ev.currentTarget.id);
   };
@@ -20,7 +18,6 @@ const Share = (props) => {
       .then((response) => response.json())
       .then((fetchResponse) => {
         console.log(fetchResponse);
-        setTwitter(fetchResponse.cardURL);
         if (fetchResponse.success === false) {
           props.setError(fetchResponse.error);
           setErrorHidden('');
@@ -28,15 +25,11 @@ const Share = (props) => {
           // props.setSuccess('');
         } else if (fetchResponse.success === true) {
           props.setSuccess(fetchResponse.cardURL);
-          setTwitter(fetchResponse.cardURL);
           setSuccessHidden('');
           setErrorHidden('hidden');
           // props.setError('')
         }
       });
-  };
-  const handleTwitter = (ev) => {
-    ev.preventDefault();
   };
   return (
     <fieldset className='share'>
