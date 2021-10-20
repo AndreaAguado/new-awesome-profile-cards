@@ -51,29 +51,41 @@ server.post('/card', (req, res) => {
     response.success = false;
     response.error = 'Falta seleccionar una imagen';
   } else {
-    const queryComprobation = db.prepare('SELECT * FROM cards WHERE email=?');
-    const dataComprobation = queryComprobation.get(req.body.email);
+    // const queryComprobation = db.prepare('SELECT * FROM cards WHERE email=?');
+    // const dataComprobation = queryComprobation.get(req.body.email);
 
-    if (dataComprobation !== undefined) {
-      response.success = true;
-      response.cardURL = `https://sqlito-johnson.herokuapp.com/card/${dataComprobation.id}`;
-    } else {
-      const query = db.prepare(
-        'INSERT INTO cards (palette, name, job, photo, github, phone, linkedin, email) VALUES (?, ?, ? ,? , ?, ?, ?, ?)'
-      );
-      const dataToImport = query.run(
-        req.body.palette,
-        req.body.name,
-        req.body.job,
-        req.body.photo,
-        req.body.github,
-        req.body.phone,
-        req.body.linkedin,
-        req.body.email
-      );
-      response.success = true;
-      response.cardURL = `https://sqlito-johnson.herokuapp.com/card/${dataToImport.lastInsertRowid}`;
-    }
+    // if (dataComprobation !== undefined) {
+    //   response.success = true;
+    //   response.cardURL = `https://sqlito-johnson.herokuapp.com/card/${dataComprobation.id}`;
+    // } else {
+    const query = db.prepare(
+      'INSERT INTO cards (palette, name, job, photo, github, phone, linkedin, email) VALUES (?, ?, ? ,? , ?, ?, ?, ?)'
+    );
+    //   const dataToImport = query.run(
+    //     req.body.palette,
+    //     req.body.name,
+    //     req.body.job,
+    //     req.body.photo,
+    //     req.body.github,
+    //     req.body.phone,
+    //     req.body.linkedin,
+    //     req.body.email
+    //   );
+    //   response.success = true;
+    //   response.cardURL = `https://sqlito-johnson.herokuapp.com/card/${dataToImport.lastInsertRowid}`;
+    // }
+    const dataToImport = query.run(
+      req.body.palette,
+      req.body.name,
+      req.body.job,
+      req.body.photo,
+      req.body.github,
+      req.body.phone,
+      req.body.linkedin,
+      req.body.email
+    );
+    response.success = true;
+    response.cardURL = `https://sqlito-johnson.herokuapp.com/card/${dataToImport.lastInsertRowid}`;
   }
   res.json(response);
 });

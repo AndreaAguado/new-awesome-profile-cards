@@ -3,6 +3,7 @@ import { useState } from 'react';
 const Share = (props) => {
   const [errorHidden, setErrorHidden] = useState('hidden');
   const [sucessHidden, setSuccessHidden] = useState('hidden');
+
   const handleClick = (ev) => {
     props.handleCollapsable(ev.currentTarget.id);
   };
