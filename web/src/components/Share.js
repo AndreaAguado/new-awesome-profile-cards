@@ -35,6 +35,9 @@ const Share = (props) => {
         }
       });
   };
+  const handleTwitter = (ev) => {
+    ev.preventDefault();
+  };
   return (
     <fieldset className='share'>
       <section
@@ -65,7 +68,7 @@ const Share = (props) => {
               Pinche aquí amig@ {props.data.name} !!!!!!!!!
             </a>
             {/* <!-- pendiente hacerlo interactivo --> */}
-            <button className='creada--button'>
+            <button className='creada--button' onClick={handleTwitter}>
               <a
                 className='linkTwitter'
                 target='blank'
