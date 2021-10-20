@@ -63,7 +63,7 @@ server.post('/card', (req, res) => {
       const query = db.prepare('INSERT INTO cards (palette, name, job, photo, github, phone, linkedin, email) VALUES (?, ?, ? ,? , ?, ?, ?, ?)');
       const dataToImport = query.run(req.body.palette, req.body.name, req.body.job, req.body.photo, req.body.github, req.body.phone, req.body.linkedin, req.body.email);
       response.success = true;
-      response.cardURL = `http://localhost:4000/card/${dataToImport.lastInsertRowid}`;
+      response.cardURL = `https://sqlito-johnson.herokuapp.com/card/${dataToImport.lastInsertRowid}`;
     }
 
   }
