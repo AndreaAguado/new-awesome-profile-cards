@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Adalab/project-promo-n-module-3-team-2.git"
+    "url": "git+https://github.com/AndreaAguado/new-awesome-profile-cards.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Adalab/project-promo-n-module-3-team-2/issues"
+    "url": "https://github.com/AndreaAguado/new-awesome-profile-cards/issues"
   },
-  "homepage": "https://github.com/Adalab/project-promo-n-module-3-team-2#readme",
+  "homepage": "https://github.com/AndreaAguado/new-awesome-profile-cards#readme",
   "dependencies": {
     "better-sqlite3": "^7.4.3",
     "cors": "^2.8.5",
