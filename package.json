@@ -8,7 +8,6 @@
     "dev": "nodemon src/index.js",
     "publish": "cd web && npm run build && cd .. && rm -rf ./public ; mv ./web/build ./public",
     "build": "cd web && npm install && npm run build && cd .. && mv ./web/build ./public"
-
   },
   "repository": {
     "type": "git",
