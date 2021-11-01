@@ -51,7 +51,6 @@ function App() {
 
   const handleCollapsable = (id) => {
     const selected = id;
-    console.log(selected);
     if (selected === 'collapseDesign') {
       setStateDesign('');
       setStateFill('hidden');
@@ -96,7 +95,6 @@ function App() {
 
   const handleImage = (file) => {
     setData({ ...data, photo: file });
-    console.log('img', file);
   };
   console.log(data);
   return (
