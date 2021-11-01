@@ -3,7 +3,6 @@
 // Importamos los dos módulos de NPM necesarios para trabajar
 const express = require('express');
 const cors = require('cors');
-const card = require('./data/data.json');
 const DataBase = require('better-sqlite3');
 
 // Creamos el servidor
@@ -68,6 +67,7 @@ server.post('/card', (req, res) => {
     response.cardURL = `https://new-awesome-profile-cards.herokuapp.com/card/${dataToImport.lastInsertRowid}`;
   }
   res.json(response);
+  console.log(response);
 });
 
 const staticServerPathWeb = './public';
